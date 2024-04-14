@@ -1,1 +1,4 @@
-
+Module visiteur:
+-accès à la prmeière page du site avec un pop-up lui disant de se connecter (alert avec un onclick redirigeant vers l'inscription)
+Module Utilisateur:
+-
