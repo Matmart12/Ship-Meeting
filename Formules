@@ -1,4 +1,19 @@
 Module visiteur:
--accès à la prmeière page du site avec un pop-up lui disant de se connecter (alert avec un onclick redirigeant vers l'inscription)
+-accès à la première page du site avec un pop-up lui disant de se connecter (alert avec un onclick redirigeant vers l'inscription)
+
 Module Utilisateur:
--
+-accès et modification à son profil (pseudo, sexe, âge, photo, mot de passe, adresse(info complémentaire))
+-accès et modification à ses données privées
+-recherche et accès au profil d’autrui
+-pouvoir utiliser l’app
+-consultation des offres d’abonnements
+-savoir le nombre de personnes différentes qui ont visité son profil
+
+Module abonné:
+-chat avec autrui ou bloquer une personne
+-savoir qui a visité son profil
+
+Module admin:
+-accès et modification aux données privées de n’importe qui (a accès et peut supprimer les chats)
+-accès à la liste de tous les utilisateurs
+-ban d’un profil
