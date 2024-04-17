@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<style>
+</style>
+<html>
+    <body >
+<center>
+    <table width="75%" border="hidden">
+    <tr>
+        <center><th colspan="4"> Veuillez choisir un ship </th></center>
+    </tr>
+    <tr>
+        <td><center><img src="https://i.pinimg.com/custom_covers/222x/327988854051492592_1514722546.jpg" alt="" onclick="" name="" class="normal"></center></td>
+        <td><center><img src="https://i.pinimg.com/custom_covers/222x/327988854051492592_1514722546.jpg" alt="" onclick="" name="" class="normal"></center></td>
+        <td><center><img src="https://i.pinimg.com/custom_covers/222x/327988854051492592_1514722546.jpg" alt="" onclick="" name="" class="normal"></center></td>
+        <td><center><img src="https://i.pinimg.com/custom_covers/222x/327988854051492592_1514722546.jpg" alt="" onclick="" name="" class="normal"></center></td>
+    </tr>
+    <tr>
+        <td><center><img src="" alt="" onclick="" name="" class="normal"></center></td>
+        <td><center><img src="" alt="" onclick="" name="" class="normal"></center></td>
+        <td><center><img src="" alt="" onclick="" name="" class="normal"></center></td>
+        <td><center><img src="" alt="" onclick="" name="" class="normal"></center></td>
+    </tr>
+    <tr>
+        <td><center><img src="" alt="" onclick="" name="" class="normal"></center></td>
+        <td><center><img src="" alt="" onclick="" name="" class="normal"></center></td>
+        <td><center><img src="" alt="" onclick="" name="" class="normal"></center></td>
+        <td><center><img src="" alt="" onclick="" name="" class="normal"></center></td>
+    </tr>
+    <tr>
+        <td><center><img src="" alt="" onclick="" name="" class="normal"></center></td>
+        <td><center><img src="" alt="" onclick="" name="" class="normal"></center></td>
+        <td><center><img src="" alt="" onclick="" name="" class="normal"></center></td>
+        <td><center><img src="" alt="" onclick="" name="" class="normal"></center></td>
+    </tr>
+    </table>
+</center>
+<script type="text/javascript">
+    var nom1; var nom2
+    function ship(nom, place){
+        if(nom1!=NULL){
+            if(nom1!=nom){
+                if(nom2!=NULL){
+                    if(nom2!=nom){
+                        alert("Le ship possède déjà tous ses personnages, veuillez remodifier le ship ou l'enregistrer!")
+                        exit;
+                    }
+                    else{
+                        console.log()
+                        nom2=NULL;
+                    }
+                }
+                else{
+                    nom2=nom;
+                }
+            }
+            else{
+                
+                nom1=NULL;
+            }
+        }
+        else{
+            nom1=nom;
+        }
+    }
+</script>
+</html>
+
