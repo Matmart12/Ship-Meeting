@@ -77,7 +77,7 @@
         var nom1; var nom2
         const tab = document.getElementById("Mytab");
         tab.addEventListener("click", function (e) {
-        /** @type {HTMLElement} */ const image = e.target;
+        /** @type {HTMLElement} */ const image = e.target; //séléctioner l'image d'une cellule
             const nom = image.getAttribute("name");
             console.log(nom);
             if (nom == null) {
@@ -90,7 +90,7 @@
                             alert("Le ship possède déjà tous ses personnages, veuillez remodifier le ship ou l'enregistrer!")
                         }
                         else {
-                            image.parentElement.style.backgroundColor = "white";
+                            image.parentElement.style.backgroundColor = "white";    //la cellule où se trouve l'image change son background color
                             nom2 = null;
                         }
                     }
