@@ -108,7 +108,16 @@
                 image.parentElement.style.backgroundColor = "lightblue";
                 nom1 = nom;
             }
-        });
+        
+        if(nom1!=null && nom2!=null){
+            var x;
+            if(nom1>nom2){
+                x=nom1;
+                nom1=nom2;
+                nom2=x;
+            }
+        };
+    })
     </script>
 
 </html>
