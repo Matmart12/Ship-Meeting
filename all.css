@@ -1,0 +1,12 @@
+img.profil{
+    width : 150px; height : 150px;
+    border: none;
+    -moz-border-radius : 75px;
+    -webkit-border-radius : 75px;
+    border-radius : 75px;
+    width: 200px;
+    height: 200px;
+  }
+  table{
+    border: none
+  }
