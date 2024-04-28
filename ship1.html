@@ -72,9 +72,10 @@
                 </td>
             </tr>
         </table>
+        <button > envoyer</button>
     </center>
     <script type="text/javascript">
-        var nom1; var nom2
+        var nom1; var nom2; var ship;
         const tab = document.getElementById("Mytab");
         tab.addEventListener("click", function (e) {
         /** @type {HTMLElement} */ const image = e.target; //séléctioner l'image d'une cellule
@@ -116,6 +117,7 @@
                 nom1=nom2;
                 nom2=x;
             }
+            ship=nom1+"x"+nom2;
         };
     })
     </script>
