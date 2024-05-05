@@ -11,6 +11,14 @@ img.profil{
     border: none;
     
   }
-  div{
-    vertical-align: middle;
+  #divtab{
+    position: relative;
+    bottom:50%;
+    
+  }
+  #divvue{
+    position:absolute;
+    bottom:50px;
+    right:50px;
+    width: 70px;
   }
