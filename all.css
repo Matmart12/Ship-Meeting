@@ -3,10 +3,14 @@ img.profil{
     border: none;
     -moz-border-radius : 75px;
     -webkit-border-radius : 75px;
-    border-radius : 75px;
+    border-radius : 90px;
     width: 200px;
     height: 200px;
   }
   table{
-    border: none
+    border: none;
+    
+  }
+  div{
+    vertical-align: middle;
   }
