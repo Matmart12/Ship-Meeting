@@ -2,7 +2,9 @@
 <style>
 </style>
 <html>
-
+<?php
+session_start();
+?>
 <body>
     <center>
         <table width="75%" id="Mytab">

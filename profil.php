@@ -4,18 +4,19 @@
 </head>
 
 </style>
-<!--<?php
+<!--
+       
     session_start();
-    $Un=$_SESSION("Nom");
+    $Um=$_SESSION("Mail");
     $Up=$_SESSION("Prénom");
-    $n=$_POST("Nom");
-    $p=$_POST("Prénom");
-    $D=$_POST("Description");
-    $Mail=$_POST("Mail");
-    $Age=$_POST("Age");
-    $S=$_POST("sexe");
-    $A=$_POST("Adresse");
-    $Mdp=$_POST("Mdp");
+    $n=$_POST("Nom");                           |
+    $p=$_POST("Prénom");                        |
+    $D=$_POST("Description");                   |ou utiliser ajax
+    $Mail=$_POST("Mail");                       |
+    $Age=$_POST("Age");                         |
+    $S=$_POST("sexe");                          |
+    $A=$_POST("Adresse");                       |
+    $Mdp=$_POST("Mdp");                         |
     $x=strlen($Mdp);
     $MDP;
     for($i=0; $i<$x; $i++){
@@ -23,7 +24,7 @@
             $MDP[0]=$Mdp[0];
         }
         else{
-            if($i+1!=x){
+            if($i+1!=$x){
                 $MDP[$i]='*';
             }
             else{
@@ -31,15 +32,16 @@
             }
         }
     }
-    >-->
+    ?>
+    -->
 <html>
     <div class="divtab">
-        <table width="80%" height="80%" align="center" margin-top="auto">
+        <table width="100%" height="80%" align="center" margin-top="auto">
             <tr colspan="3">
                 <center><h1>Profil</h1></center>
             </tr>
             <tr height="200">
-                <td rowspan="6" bgcolor="black" height="80%" >
+                <td rowspan="6" bgcolor="black">
                     <vertical-align>
                         <center>
                             <img src="https://i.pinimg.com/custom_covers/222x/327988854051492592_1514722546.jpg" alt="" class="profil"> <br>
@@ -54,8 +56,8 @@
             </tr>
             <tr></tr>
             <tr height="100">
-                <td> Prénom: </td>                           <!-- seulement pour le propritétaire du compte--> 
-                <td> Nom: </td>                              <!-- seulement pour le propritétaire du compte--> 
+                <td> Prénom: prénom random </td>                           <!-- seulement pour le propritétaire du compte--> 
+                <td> Nom: nom random</td>                              <!-- seulement pour le propritétaire du compte--> 
                 
             </tr>
             <tr>
@@ -67,7 +69,7 @@
                 <td> age: 19 ans</td>                        <!-- seulement pour le propritétaire du compte--> 
             </tr>
             <tr height="100">
-                <td> adresse (ville): </td>                  <!-- seulement pour le propritétaire du compte-->
+                <td> adresse (ville): ville random</td>                  <!-- seulement pour le propritétaire du compte-->
             </tr>
         </table>
     </div>
