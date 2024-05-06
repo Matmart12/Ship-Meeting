@@ -67,14 +67,14 @@
                 <td>
                     <center><img src="" alt="" name="" ></center>
                 </td>
-                <td onclick="ship">
+                <td>
                     <center><img src="" alt="" name="" ></center>
                 </td>
             </tr>
         </table>
-        <form action="test.php" method post>
-            <input type="hidden" name="" id="ship">
-            <button type="submit" id="button" nom="ship" value="" onmouseover=""> envoyer</button>
+        <form action="test.php" method =post>
+            <input type="hidden" name="ship" id="ship" value="">        <!--form pour envoyer le ship-->
+            <button type="submit" id="button" name="ship1" value="" onmouseover=""> envoyer</button>
     </form>
 </center>
         
@@ -114,6 +114,10 @@
                 nom1 = nom;
             }
         
+            if(nom1 == nom2){
+                nom2 = null;
+            }
+
         if(nom1!=null && nom2!=null){
             var x;
             if(nom1>nom2){  //remettre les personnages dans l'ordre alphabétique pour rendre le php plus simple par la suite
@@ -123,17 +127,19 @@
             }
             ship=nom1+"x"+nom2;
         };
-    if(nom1!=null && nom2!=null){
-            document.getElementById('ship');value=ship;
-            document.getElementById('button').style.display="block";
-        }
-        else{
-            document.getElementById('ship');value="";
-            document.getElementById('button').style.display="none";
-        }
-    })
-    document.getElementById('ship');value="";
-            document.getElementById('button').style.display="none";
+
+        if(nom1!=null && nom2!=null && nom1 != nom2){
+                document.getElementById('ship').value=ship;             //activer/désactiver le bouton en fonction de si on a assez de données
+                document.getElementById('button').style.visibility="visible";
+            }
+            else{
+                document.getElementById('ship').value="";
+                document.getElementById('button').style.visibility="hidden";
+            }
+        })
+
+        document.getElementById('ship').value="";
+        document.getElementById('button').style.visibility="hidden";
     </script>
 
 </html>

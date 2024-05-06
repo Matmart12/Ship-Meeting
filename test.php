@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
 <?php 
-    $ship=$_POST("ship");
-    echo $ship;
+    $ship=$_POST["ship"];
+    echo "$ship";
 ?>
