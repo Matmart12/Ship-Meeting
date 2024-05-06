@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<style>
-</style>
 <html>
 <?php
 session_start();
