@@ -35,8 +35,9 @@
     ?>
     -->
 <html>
+    <div id=divdroit><a href="accueuil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
     <div class="divtab">
-        <table width="100%" height="80%" align="center" margin-top="auto">
+        <table width="90%" height="90%" align="center" margin-top="auto">
             <tr colspan="3">
                 <center><h1>Profil</h1></center>
             </tr>
@@ -55,7 +56,7 @@
                 </td>
             </tr>
             <tr></tr>
-            <tr height="100">
+            <tr height="110">
                 <td> Prénom: prénom random </td>                           <!-- seulement pour le propritétaire du compte--> 
                 <td> Nom: nom random</td>                              <!-- seulement pour le propritétaire du compte--> 
                 
@@ -64,17 +65,18 @@
                 <td> mot de passe: JeMetUnTrucRandom</td>    <!-- seulement pour le propritétaire du compte--> 
                 <td> Mail: MonMail@gmail.com</td>            <!-- seulement pour le propritétaire du compte--> 
             </tr>
-            <tr height="100">
+            <tr height="110">
                 <td> sexe: male</td>
                 <td> age: 19 ans</td>                        <!-- seulement pour le propritétaire du compte--> 
             </tr>
-            <tr height="100">
+            <tr height="110">
                 <td> adresse (ville): ville random</td>                  <!-- seulement pour le propritétaire du compte-->
             </tr>
         </table>
     </div>
-        <div id="divvue">
-            <img src="https://previews.123rf.com/images/yupiramos/yupiramos1702/yupiramos170203297/70844218-signe-humain-oeil-isol%C3%A9-ic%C3%B4ne-dessin-vectoriel.jpg" alt=""width="30px">:
+        <div id="divdroit">
+            <img src="https://previews.123rf.com/images/yupiramos/yupiramos1702/yupiramos170203297/70844218-signe-humain-oeil-isol%C3%A9-ic%C3%B4ne-dessin-vectoriel.jpg" alt=""width="40px">
+        (:vues) 
         </div>
 
 </html>
