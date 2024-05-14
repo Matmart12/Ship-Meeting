@@ -32,7 +32,11 @@ session_start();
             </td>        
         </tr>
         <tr>
-            <button onclick="ajoutabon()"></button>
+            <td>
+                <center>
+            <button onclick="ajoutabon()">activer l'abonnement</button>
+        </center>
+        </td>
         </tr>
     </table>
 </center>

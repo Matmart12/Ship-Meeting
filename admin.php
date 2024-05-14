@@ -20,8 +20,8 @@ session_start();
         <br>
     <textarea name="admin?" cols="50">
         Veuillez mettre votre réponse ici.
-    </textarea>
-    <button onclick="ajoutadmin()"></button>
+    </textarea> <br>
+    <button onclick="ajoutadmin()">activer l'abonnement</button>
 </center>
 </div>
 </form>
