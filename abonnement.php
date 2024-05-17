@@ -34,24 +34,15 @@ session_start();
         <tr>
             <td>
                 <center>
-            <button onclick="ajoutabon()">activer l'abonnement</button>
+            <button onclick="abonné()">activer l'abonnement</button>
         </center>
         </td>
         </tr>
     </table>
 </center>
 </div>
-
-<?php
-function ajoutabon(){
-    $_SESSION["formule"]="abonné";
-    $time=time();
-    //changer la formule sur le fichier et faire en sorte que ce soit temporaire
-}
-?>
-    
-
-    
-
-
-</form>
+<script>
+    function abonné(){
+        document.location.href="abonné.php"
+    }
+</script>
