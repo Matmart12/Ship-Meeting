@@ -15,6 +15,11 @@ if(file_exists($file_path)){
         exit();
     }
 }
+
+if($tab[$_SESSION["index"]]["grade"]!="admin"||$tab[$_SESSION["index"]]["grade"]!="abonné"||$tab[$_SESSION["index"]]["grade"]!="inscrit"){
+    header("location:page_accueil.php");
+}
+
 if(isset($_POST["index"])){
 $i=$_POST["index"];
 }
@@ -33,9 +38,10 @@ $S=$tab[$i]["sexe"];
 $Mdp=$tab[$i]["password"];
 $vues=$tab[$i]["vues"];
 $A=$tab[$i]["pays"];
+$sh=$tab[$i]["ship"];
 $x=strlen($Mdp);
 for($i=0; $i<$x; $i++){
-    if($i===0){
+    if($i==0){
         $MDP[0]=$Mdp[0];
     }
     else{
@@ -52,7 +58,7 @@ for($i=0; $i<$x; $i++){
 <html>
 
     <div id=divdroit><a href="compte.php"><img src="https://e7.pngegg.com/pngimages/313/130/png-clipart-colored-pencil-black-and-white-drawing-sharpener-s-angle-pencil.png" alt="" width=70px></a>
-    <a href="accueuil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
+    <a href="page_accueil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
     <div class="divtab">
         <table width="90%" height="90%" align="center" margin-top="auto">
             <tr colspan="3">
@@ -88,6 +94,7 @@ for($i=0; $i<$x; $i++){
             </tr>
             <tr height="110">
                 <td> <?php if($Um==$Mail|| $Ug=="admin")echo "adresse (ville): $A" ?></td>                  <!-- seulement pour le propritétaire du compte-->
+                <td> <?php if($Um==$Mail|| $Ug=="admin")echo "ship: $sh" ?></td> 
             </tr>
         </table>
     </div>

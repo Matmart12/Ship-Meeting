@@ -2,12 +2,15 @@
 <html>
 <?php
 session_start();
+if($tab[$_SESSION["index"]]["grade"]!="admin"||$tab[$_SESSION["index"]]["grade"]!="abonné"||$tab[$_SESSION["index"]]["grade"]!="inscrit"){
+    header("location:page_accueil.php");
+}
 ?>
 <head>
 <link rel="stylesheet" href="all.css">
 </head>
-<div id=divdroit><a href="accueuil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
-<form action="" method=post>
+<div id=divdroit><a href="page_accueil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
+
 
 <div id="table">
 <center>

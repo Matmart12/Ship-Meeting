@@ -39,7 +39,7 @@ if(isset($_POST['email'], $_POST['password'])){
 </head>
 
 <body>
-    <form method="POST" action="../php/connexion.php"><div id=divdroit><a href="../page_connexion.php"><img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
+    <form method="POST" action="../php/connexion.php"><div id=divdroit><a href="connexion.php"><img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
         <legend><h1>Formulaire de connexion</h1>
             <table>  
                 <tr>

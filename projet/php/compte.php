@@ -14,6 +14,9 @@ else{
     echo "Erreur Critique";
     exit();
 }
+if($tab[$_SESSION["index"]]["grade"]!="admin"||$tab[$_SESSION["index"]]["grade"]!="abonné"||$tab[$_SESSION["index"]]["grade"]!="inscrit"){
+    header("location:page_accueil.php");
+}
 
 $index = $_SESSION['index'];
 if(isset($_POST['email'], $_POST['password'], $_POST['prenom'], $_POST['nom'], $_POST['age'], $_POST['pays'])){

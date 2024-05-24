@@ -19,6 +19,9 @@ if((isset($_POST['ship'])) && (!empty($_POST['ship']))){
     header("Location: page_accueil.php");
     exit();
 }
+if($tab[$_SESSION["index"]]["grade"]!="admin"||$tab[$_SESSION["index"]]["grade"]!="abonné"||$tab[$_SESSION["index"]]["grade"]!="inscrit"){
+    header("location:page_accueil.php");
+}
 ?>
 
 <!DOCTYPE html>

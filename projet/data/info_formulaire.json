@@ -20,16 +20,6 @@
         "photo": "TheGreatReview@gmail.com.png"
     },
     {
-        "email": "MathisRaciste@gmail.com",
-        "password": "1234",
-        "prenom": "Mathis",
-        "nom": "Martinez",
-        "age": "90",
-        "pays": "France",
-        "ship": 0,
-        "photo": "MathisRaciste@gmail.com.png"
-    },
-    {
         "email": "sarahboutin92@gmail.com",
         "password": "&\u00e7\u00e8",
         "prenom": "sarah",
@@ -56,9 +46,9 @@
         "nom": "Martinez",
         "age": "19",
         "pays": "France",
-        "ship": "ErenxMikasa",
+        "ship": "MikasaxMouise",
         "photo": "mathis.m7878@gmail.com.png",
-        "grade": "abonn\u00e9",
+        "grade": "admin",
         "pseudo": "Matmart12"
     }
 ]

@@ -1,5 +1,18 @@
 <?php
 session_start();
+
+$file_path = "../data/info_formulaire.json";
+if(file_exists($file_path)){
+    $json_data = file_get_contents($file_path);
+    $tab = json_decode($json_data, true);
+    if(empty($json_data) || !is_array($tab)){
+        echo "Erreur critique";
+        exit();
+    }
+}
+if($tab[$_SESSION["index"]]["grade"]!="admin"){
+    header("location:page_accueil.php");
+}
 ?>
 
 <!DOCTYPE html>

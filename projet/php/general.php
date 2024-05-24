@@ -5,6 +5,9 @@ session_start();
 if($_SESSION("index")==null){
     header("location:php/accueuil.php");
 }
+if($tab[$_SESSION["index"]]["grade"]!="admin"||$tab[$_SESSION["index"]]["grade"]!="abonné"||$tab[$_SESSION["index"]]["grade"]!="inscrit"){
+    header("location:page_accueil.php");
+}
 ?>
 <head>
 <link rel="stylesheet" href="all.css">
