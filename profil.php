@@ -4,42 +4,44 @@
 </head>
 
 </style>
-<!--
-       <php
-    session_start();
-    $Um=$_SESSION("Mail");
-    $Pseudo=$_POST("Pseudo")
-    $n=$_POST("Nom");                           |
-    $p=$_POST("Prénom");                        |
-    $D=$_POST("Description");                   |ou utiliser ajax
-    $Mail=$_POST("Mail");                       |
-    $Age=$_POST("Age");                         |
-    $S=$_POST("sexe");                          |
-    $A=$_POST("Adresse");                       |
-    $Mdp=$_POST("Mdp");                         |
-    $x=strlen($Mdp);
-    $Vues=£_POST("vues")
-    $MDP;
-    for($i=0; $i<$x; $i++){
-        if($i===0){
-            $MDP[0]=$Mdp[0];
+<?php
+session_start();
+$file_path = "../data/info_formulaire.json";
+if(file_exists($file_path)){
+    $json_data = file_get_contents($file_path);
+    $tab = json_decode($json_data, true);
+    if(empty($json_data) || !is_array($tab)){
+        echo "Vous n'avez pas créer un compte sur Ship-Meeting";
+    }
+}
+$i=$_POST["index"];
+$Um=$tab[$_SESSION["index"]]["Mail"];
+$Ug=$tab[$_SESSION["index"]]["grade"];
+$Mail=$tab[$i]["Mail"];
+$Pseudo=$tab[$i]["pseudo"];
+$n=$tab[$i]["nom"];
+$p=$tab[$i]["Prénom"];
+$D=$tab[$i]["Description"];
+$Age=$tab[$i]["Age"];
+$S=$tab[$i]["sexe"];
+$Mdp=$tab[$i]["Mdp"];
+$vues=$tab[$i]["vues"];
+$x=strlen($Mdp);
+for($i=0; $i<$xMail; $i++){
+    if($i===0){
+        $MDP[0]=$Mdp[0];
+    }
+    else{
+        if($i+1!=$x){
+            $MDP[$i]='*';
         }
         else{
-            if($i+1!=$x){
-                $MDP[$i]='*';
-            }
-            else{
-                $MDP[$i]=$Mdp[$i];
-            }
+            $MDP[$i]=$Mdp[$i];
         }
     }
-    ?>
-    -->
-    
-    <?php $x="lol"; 
-    $Um="mdr@gmail.com";
-    $Mail="bruh.com";
-    $D="Je suis un humain tkt"?>
+}
+?>
+
 <html>
 
     <div id=divdroit><a href="accueuil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
@@ -64,20 +66,20 @@
             </tr>
             <tr></tr>
             <tr height="110">
-                <td> <?php if($Um==$Mail)echo "Prénom: $p" ?></td>                           <!-- seulement pour le propritétaire du compte--> 
-                <td> <?php if($Um==$Mail)echo "Nom: $n"?></td>                              <!-- seulement pour le propritétaire du compte--> 
+                <td> <?php if($Um==$Mail|| $Ug=="admin")echo "Prénom: $p"?></td>                           <!-- seulement pour le propritétaire du compte--> 
+                <td> <?php if($Um==$Mail|| $Ug=="admin")echo "Nom: $n"?></td>                              <!-- seulement pour le propritétaire du compte--> 
                 
             </tr>
             <tr>
-                <td> <?php if($Um==$Mail)echo "mot de passe: $MDP" ?></td>    <!-- seulement pour le propritétaire du compte--> 
-                <td> <?php if($Um==$Mail)echo "Mail: $Mail" ?></td>            <!-- seulement pour le propritétaire du compte--> 
+                <td> <?php if($Um==$Mail|| $Ug=="admin")echo "mot de passe: $MDP" ?></td>    <!-- seulement pour le propritétaire du compte--> 
+                <td> <?php if($Um==$Mail|| $Ug=="admin")echo "Mail: $Mail" ?></td>            <!-- seulement pour le propritétaire du compte--> 
             </tr>
             <tr height="110">
-                <td> <?php if($Um==$Mail)echo "sexe: $S" ?></td>
-                <td> <?php if($Um==$Mail)echo "age: $Age" ?></td>                        <!-- seulement pour le propritétaire du compte--> 
+                <td> <?php if($Um==$Mail|| $Ug=="admin")echo "sexe: $S" ?></td>
+                <td> <?php if($Um==$Mail|| $Ug=="admin")echo "age: $Age" ?></td>                        <!-- seulement pour le propritétaire du compte--> 
             </tr>
             <tr height="110">
-                <td> <?php if($Um==$Mail)echo "adresse (ville): $A" ?></td>                  <!-- seulement pour le propritétaire du compte-->
+                <td> <?php if($Um==$Mail|| $Ug=="admin")echo "adresse (ville): $A" ?></td>                  <!-- seulement pour le propritétaire du compte-->
             </tr>
         </table>
     </div>

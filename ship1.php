@@ -72,7 +72,7 @@ session_start();
                 </td>
             </tr>
         </table>
-        <form action="test.php" method =post>
+        <form action="ship.php" method =post>
             <input type="hidden" name="ship" id="ship" value="">        <!--form pour envoyer le ship-->
             <button type="submit" id="button" name="ship1" value="" onmouseover=""> envoyer</button>
     </form>

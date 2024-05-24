@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html>
+<head>
+    <link rel="stylesheet" href="all.css">
+</head>
+
+</style>
 <?php
 session_start();
 $file_path = "../data/info_formulaire.json";
@@ -11,14 +15,8 @@ if(file_exists($file_path)){
     }
 }
 $i=$_SESSION["index"];
-$Ug="abonné";
+$Ug="admin";
 $tab[$i]["grade"]=$Ug;
-$time=time();
-$tab[$i]["time"];
 file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));
 header("location:accueuil.php");
-    
-    
-    sleep(5);
-    header("location:accueuil.php");
 ?>

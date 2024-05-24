@@ -7,7 +7,7 @@
         "age": "20",
         "pays": "France",
         "ship": "ErenxMikasa",
-        "photo": "gaviolivic@cy-tech.fr.png"
+        "photo": "0.png"
     },
     {
         "email": "TheGreatReview@gmail.com",
@@ -47,6 +47,16 @@
         "age": "18",
         "pays": "France",
         "ship": "ErenxMikasa",
+        "photo": "0.png"
+    },
+    {
+        "email": "mathis.m7878@gmail.com",
+        "password": "Merde",
+        "prenom": "Mathis",
+        "nom": "Martinez",
+        "age": "19",
+        "pays": "France",
+        "ship": 0,
         "photo": "0.png"
     }
 ]

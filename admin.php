@@ -28,7 +28,6 @@ session_start();
 <?php
 function ajoutadmin(){
     $_SESSION["formule"]="admin";
-    $time=time();
-    //changer la formule sur le fichier
+    header("location:accueuil.php");
 }
 
