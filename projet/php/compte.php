@@ -31,6 +31,7 @@ if(isset($_POST['email'], $_POST['password'], $_POST['prenom'], $_POST['nom'], $
     $tab[$index]['nom'] = $_POST['nom'];
     $tab[$index]['age'] = $_POST['age'];
     $tab[$index]['pays'] = $_POST['pays'];
+    $tab[$index]['pseudo'] = $_POST['pseudo'];
     $old_photo = $tab[$index]['photo'];
     $email = $_POST['email'];
     if($tab[$index]['photo'] != "0.png"){
@@ -84,6 +85,15 @@ if(isset($_POST['email'], $_POST['password'], $_POST['prenom'], $_POST['nom'], $
             </tr>
             <tr>
                 <td><input id="text" placeholder="pays" name="pays" type="text" value="<?php echo $tab[$index]['pays'];?>" required></input></td>
+            </tr>
+            <tr>
+                <td><input id="text" placeholder="pseudo" name="pseudo" type="text" value="<?php echo $tab[$index]['pseudo'];?>" required></input></td>
+            </tr>
+            <tr>
+                <td><input id="text" placeholder="Description" name="Description" type="text" value="<?php echo $tab[$index]['Description'];?>" required></input></td>
+            </tr>
+            <tr>
+                <td><input id="text" placeholder="sexe" name="sexe" type="text" value="<?php echo $tab[$index]['sexe'];?>" required></input></td>
             </tr>
             <tr>
                 <td><button id="compte" type="submit">Valider les modifications</button></td>

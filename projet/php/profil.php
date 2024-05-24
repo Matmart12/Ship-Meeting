@@ -11,23 +11,30 @@ if(file_exists($file_path)){
     $json_data = file_get_contents($file_path);
     $tab = json_decode($json_data, true);
     if(empty($json_data) || !is_array($tab)){
-        echo "Vous n'avez pas créer un compte sur Ship-Meeting";
+        echo "Erreur critique";
+        exit();
     }
 }
+if(isset($_POST["index"])){
 $i=$_POST["index"];
-$Um=$tab[$_SESSION["index"]]["Mail"];
+}
+else{
+    $i=$_SESSION["index"];
+}
+$Um=$tab[$_SESSION["index"]]["email"];
 $Ug=$tab[$_SESSION["index"]]["grade"];
-$Mail=$tab[$i]["Mail"];
+$Mail=$tab[$i]["email"];
 $Pseudo=$tab[$i]["pseudo"];
 $n=$tab[$i]["nom"];
-$p=$tab[$i]["Prénom"];
+$p=$tab[$i]["prenom"];
 $D=$tab[$i]["Description"];
-$Age=$tab[$i]["Age"];
+$Age=$tab[$i]["age"];
 $S=$tab[$i]["sexe"];
-$Mdp=$tab[$i]["Mdp"];
+$Mdp=$tab[$i]["password"];
 $vues=$tab[$i]["vues"];
+$A=$tab[$i]["pays"];
 $x=strlen($Mdp);
-for($i=0; $i<$xMail; $i++){
+for($i=0; $i<$x; $i++){
     if($i===0){
         $MDP[0]=$Mdp[0];
     }
@@ -44,7 +51,8 @@ for($i=0; $i<$xMail; $i++){
 
 <html>
 
-    <div id=divdroit><a href="accueuil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
+    <div id=divdroit><a href="compte.php"><img src="https://e7.pngegg.com/pngimages/313/130/png-clipart-colored-pencil-black-and-white-drawing-sharpener-s-angle-pencil.png" alt="" width=70px></a>
+    <a href="accueuil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
     <div class="divtab">
         <table width="90%" height="90%" align="center" margin-top="auto">
             <tr colspan="3">

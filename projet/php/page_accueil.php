@@ -40,7 +40,7 @@ session_start();
 </body>
 <script>
     function Accueil(){
-        window.location.href = "../page_connexion.php";
+        window.location.href = "connexion.php";
     }
     function Ship_avatar(){
         window.location.href = "ship.php";
@@ -52,7 +52,7 @@ session_start();
         window.location.href = "formules.php";
     }
     function Compte(){
-        window.location.href = "compte.php"
+        window.location.href = "profil.php"
     }
 </script>
 

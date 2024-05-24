@@ -14,20 +14,19 @@ session_start();
         il semblerait que vous souhaitez devenir admin sur ce site. <br>
         Veuillez donc trouver la solution du riddle suivant: <br>
     <br>
-        -Riddle1 <br>
-        -Riddle2 <br>
-        -Riddle3 <br>
+        -Je suis partout à la fois. <br>
+        -Je suis présent depuis le big bang. <br>
+        -Je suis dans le passé, le présent et le futur. <br>
         <br>
     <textarea name="admin?" cols="50">
-        Veuillez mettre votre réponse ici.
+Qui-suis-je?
     </textarea> <br>
-    <button onclick="ajoutadmin()">activer l'abonnement</button>
+    <button onclick="ajoutadmin()">activer le mode admin</button>
 </center>
 </div>
 </form>
-<?php
+<script type="text/javascript">
 function ajoutadmin(){
-    $_SESSION["formule"]="admin";
-    header("location:accueuil.php");
+        document.location.href="ad_admin.php";
 }
-
+</script>
