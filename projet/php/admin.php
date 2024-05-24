@@ -1,32 +1,38 @@
-<!DOCTYPE html>
-<html>
 <?php
 session_start();
 ?>
-<head>
-<link rel="stylesheet" href="all.css">
-</head>
-<div id=divdroit><a href="accueuil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
-<form action="" method=post>
 
-<div id="table">
-<center>
-        il semblerait que vous souhaitez devenir admin sur ce site. <br>
-        Veuillez donc trouver la solution du riddle suivant: <br>
-    <br>
-        -Je suis partout à la fois. <br>
-        -Je suis présent depuis le big bang. <br>
-        -Je suis dans le passé, le présent et le futur. <br>
-        <br>
-    <textarea name="admin?" cols="50">
-Qui-suis-je?
-    </textarea> <br>
-    <button onclick="ajoutadmin()">activer le mode admin</button>
-</center>
-</div>
-</form>
-<script type="text/javascript">
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="all.css">
+    </head>
+    <body>
+        <div id=divdroit><a href="page_accueil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
+        <form action="" method=post>
+            <div id="table">
+            <center>
+                il semblerait que vous souhaitez devenir admin sur ce site. <br>
+                Veuillez donc trouver la solution du riddle suivant: <br>
+                <br>
+                -Riddle1 <br>
+                -Riddle2 <br>
+                -Riddle3 <br>
+                <br>
+                <textarea name="admin?" cols="50">
+                    Veuillez mettre votre réponse ici.
+                </textarea> <br>
+                <button onclick="ajoutadmin()">activer l'abonnement</button>
+            </center>
+            </div>
+        </form>
+    </body>
+</html>
+<?php
 function ajoutadmin(){
-        document.location.href="ad_admin.php";
+    $_SESSION["formule"]="admin";
+    $time=time();
+    //changer la formule sur le fichier
 }
-</script>
+?>
+

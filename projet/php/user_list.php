@@ -48,6 +48,7 @@ session_start();
                     window.location.href = "compte.php";
                 }
                 else{
+                    $_SESSION['other_index'] = email;
                     window.location.href = "chat.php";
                 }
             }
