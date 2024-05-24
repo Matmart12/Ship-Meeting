@@ -28,26 +28,30 @@ if(isset($_POST['email'], $_POST['password'], $_POST['prenom'], $_POST['nom'], $
             }
         }
     }
-    $tab[$index]['email'] = $_POST['email'];
+
     $tab[$index]['password'] = $_POST['password'];
+    if(isset($_POST['pseudo']))
+        $tab[$index]['pseudo'] = $_POST['pseudo'];
+    else
+        $tab[$index]['pseudo'] = "";
     $tab[$index]['prenom'] = $_POST['prenom'];
     $tab[$index]['nom'] = $_POST['nom'];
     $tab[$index]['age'] = $_POST['age'];
     $tab[$index]['pays'] = $_POST['pays'];
-    $tab[$index]['pseudo'] = $_POST['pseudo'];
+
     $old_photo = $tab[$index]['photo'];
+    $tab[$index]['email'] = $_POST['email'];
     $email = $_POST['email'];
-    if($tab[$index]['photo'] != "0.png"){
+    if($tab[$index]['photo'] != "0.png")
         rename("../icones/$old_photo","../icones/$email.png");
-        $tab[$index]['photo'] = "$email.png";
-    }
-    if(isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK){
+
+    if(isset($_FILES['photo'])){
         $file = $_FILES['photo'];
-        if($old_photo != "0.png")
-            unlink("../icones/$old_photo");
-        move_uploaded_file($file['tmp_name'],"../icones/$email.png");
-        $tab[$index]['photo'] = "$email.png";   
+        move_uploaded_file($file['tmp_name'], "../icones/$email.png");
+        if(file_exists("../icones/$email.png"))
+            $tab[$index]['photo'] = "$email.png";
     }
+
     file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));
     header("Location: compte.php");
     exit();
@@ -78,6 +82,9 @@ if(isset($_POST['email'], $_POST['password'], $_POST['prenom'], $_POST['nom'], $
                 <td><input id="text" placeholder="password" name="password" type="text" value="<?php echo $tab[$index]['password'];?>" required></input></td>
             </tr>
             <tr>
+                <td><input id="text" placeholder="pseudo" name="pseudo" type="text" value="<?php echo $tab[$index]['pseudo'];?>"></input></td>
+            </tr>
+            <tr>
                 <td><input id="text" placeholder="prenom" name="prenom" type="text" value="<?php echo $tab[$index]['prenom'];?>" required></input></td>
             </tr>
             <tr>
@@ -89,19 +96,10 @@ if(isset($_POST['email'], $_POST['password'], $_POST['prenom'], $_POST['nom'], $
             <tr>
                 <td><input id="text" placeholder="pays" name="pays" type="text" value="<?php echo $tab[$index]['pays'];?>" required></input></td>
             </tr>
-            <tr>
-                <td><input id="text" placeholder="pseudo" name="pseudo" type="text" value="<?php echo $tab[$index]['pseudo'];?>" required></input></td>
-            </tr>
-            <tr>
-                <td><input id="text" placeholder="Description" name="Description" type="text" value="<?php echo $tab[$index]['Description'];?>" required></input></td>
-            </tr>
-            <tr>
-                <td><input id="text" placeholder="sexe" name="sexe" type="text" value="<?php echo $tab[$index]['sexe'];?>" required></input></td>
-            </tr>
+                <input id="file" name="photo" type="file" accept=".png"> 
             <tr>
                 <td><button id="compte" type="submit">Valider les modifications</button></td>
             </tr>
-            <input id="file" name="photo" type="file" accept=".png"> 
         </table>
     </form>
 </body>

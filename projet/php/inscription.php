@@ -21,8 +21,15 @@ if(isset($_POST['email'])){
 } 
 if(isset($_POST['password'], $_POST['prenom'], $_POST['nom'], $_POST['age'], $_POST['pays'])){
     $password = $_POST['password'];
+    if(isset($_POST['pseudo'])){
+        $pseudo = $_POST['pseudo'];
+    }
+    else{
+        $pseudo = 0;
+    }
     $prenom = $_POST['prenom'];
     $nom = $_POST['nom'];
+    $genre = $_POST['genre'];
     $age = $_POST['age'];
     $pays = $_POST['pays'];
     $file = $_FILES['photo'];
@@ -31,10 +38,14 @@ if(isset($_POST['password'], $_POST['prenom'], $_POST['nom'], $_POST['age'], $_P
         'email' => $email,
         'password' => $password,
         'prenom' => $prenom,
+        'pseudo' => $pseudo,
         'nom' => $nom,
+        'genre' => $genre,
         'age' => $age,
         'pays' => $pays,
         'ship' => 0,
+        'timer' => 0,
+        'grade' => 0,
     );
 
     if(isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
@@ -71,31 +82,38 @@ if(isset($_POST['password'], $_POST['prenom'], $_POST['nom'], $_POST['age'], $_P
 <body>
     <form enctype="multipart/form-data" method="POST" action="inscription.php">    <div id=divdroit><a href="../page_connexion.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
         <legend><h1>Formulaire d'inscription</h1>
+            <p>Les champs marqués d'une étoiles sont obligatoires (la photo ne l'est pas)</p>
             <table>  
                 <tr>
-                    <td colspan="2"><input placeholder="email" type="email" name="email" required></td>
+                    <td colspan="2"><input placeholder="email*" type="email" name="email" required></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input id="password" placeholder="password" type="password" name="password" required></button></td>
+                    <td colspan="2"><input id="password" placeholder="password*" type="password" name="password" required></button></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input placeholder="prenom" type="text" name="prenom" required> </td>
+                <td colspan="2"><input placeholder="pseudo" type="text" name="pseudo"> </td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input placeholder="nom" type="text" name="nom" required></td>
+                    <td colspan="2"><input placeholder="prenom*" type="text" name="prenom" required> </td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input placeholder="age" type="number" min="18" max="110" name="age" required></td>
+                    <td colspan="2"><input placeholder="nom*" type="text" name="nom" required></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input placeholder="pays" type="text" name="pays" required>
+                    <td colspan="2">Genre* : 
+                        <input type="radio" name="genre" value="Homme" class="pointer" required><span class="pointer" onclick="Checked('Homme')">Homme</span>
+                        <input type="radio" name="genre" value="Femme" class="pointer" required><span class="pointer" onclick="Checked('Femme')">Femme</span>
+                        <input type="radio" name="genre" value="Raciste" class="pointer" required><span class="pointer" onclick="Checked('Raciste')">Raciste</span>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input id="id1" type="file" accept=".png" name="photo" ></td>
+                    <td colspan="2"><input placeholder="age*" type="number" min="18" max="110" name="age" required></td>
                 </tr>
                 <tr>
-                    <td><button id="inscription" type="button" onclick="Connect()">Se connecter</button></td>
+                    <td colspan="2"><input input id="id1" type="file" accept=".png" name="photo"></td>
+                </tr>
+                <tr>
+                    <td><button id="inscription" type="button" onclick="Connect()">Se connecter ?</button></td>
                     <td><button id="inscription" type="submit">S'inscrire</button></td>
                 </tr>
             </table>
@@ -107,6 +125,15 @@ if(isset($_POST['password'], $_POST['prenom'], $_POST['nom'], $_POST['age'], $_P
         }
         function Connect(){
             window.location.href = "connexion.php";
+        }
+        function Checked(valeur){
+            var radio = document.getElementsByName('genre');
+            for(var i=0; i < radio.length ; i++){
+                if(radio[i].value == valeur){
+                    radio[i].checked = true;
+                    break;
+                }
+            }
         }
         function Password() {
             password = document.getElementById("password");

@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['other_index'] = 0;
 
 $file_path = "../data/info_formulaire.json";
 if(file_exists($file_path)){

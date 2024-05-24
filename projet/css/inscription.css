@@ -3,7 +3,7 @@ body {
     background-size: cover;
 }
 
-legend {
+legend{
     color: lightcoral;
     text-align: center;
     margin-top: 2%;
@@ -16,11 +16,15 @@ h1 {
 
 table {
     margin: 2% auto;
-    font-size: 38px;
     border-radius: 3px;
     border-width: 10px;
     border-color: black;
     
+}
+
+td{
+    color:black;
+    font-size:30px;
 }
 
 input {
@@ -46,4 +50,8 @@ input {
 button:hover {
     color: red;
     cursor: pointer;
+}
+
+.pointer:hover{
+    cursor:pointer;
 }
