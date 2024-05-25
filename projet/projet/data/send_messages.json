@@ -1,9 +1,16 @@
 [
     {
-        "email": "gaviolivic@cy-tech.fre",
-        "index": "gaviolivic@cy-tech.fre",
+        "email": "mathis.m7878@gmail.com",
+        "other_email": "gaviolivic@cy-tech.fr",
         "messages": [
-            "eazfaze"
+            "yo"
+        ]
+    },
+    {
+        "email": "gaviolivic@cy-tech.fr",
+        "other_email": "mathis.m7878@gmail.com",
+        "messages": [
+            "yo"
         ]
     }
 ]

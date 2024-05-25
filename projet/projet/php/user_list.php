@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION("other_email")=="";
 ?>
 
 <!DOCTYPE html>
@@ -60,8 +61,8 @@ session_start();
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     xhr.onreadystatechange = function () {
                         if (xhr.readyState == 4 && xhr.status == 200) {
-                            // Rediriger vers chat.php après avoir stocké l'email dans la session
-                            window.location.href = "chat.php";  
+                            // Rediriger vers profil.php après avoir stocké l'email dans la session
+                            window.location.href = "profil.php";  
                         }
                     };
                     xhr.send("email=" + email);

@@ -10,25 +10,26 @@ if(file_exists($file_path)){
     }
 }
 
-
 if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["time"]){
     $tab[$_SESSION["index"]]["grade"]=="inscrit";
     $tab[$_SESSION["index"]]["time"]==0;
 }
 
-if($tab[$_SESSION["index"]]["grade"]!="admin" && $tab[$_SESSION["index"]]["grade"]!="abonné" && $tab[$_SESSION["index"]]["grade"]!="inscrit"){
+if($tab[$_SESSION["index"]]["grade"]!="admin"&& $tab[$_SESSION["index"]]["grade"]!="abonné"&&$tab[$_SESSION["index"]]["grade"]!="inscrit"){
     header("location:page_accueil.php");
 }
 
-if(isset($_POST["index"])){
-$ind=$_POST["index"];
-if( $tab[$_SESSION["index"]]["grade"]!="abonné" && $tab[$_SESSION["index"]]["grade"]!="inscrit"){
-    if($_SESSION["index"]!=$i){
-        header("Location: page_accueil.php");
-    }
-}
-}
 else{
+    if(isset($_SESSION["other_email"])){
+    for($i=0; $i<count($tab); $i++)
+        if($_SESSION["other_email"]== $tab[$i]["email"])
+    {
+            $ind=$i;
+        }
+    }
+    else{
+        $ind=$_SESSION["index"];
+    }
     $ind=$_SESSION["index"];
 }
 $Um=$tab[$_SESSION["index"]]["email"];
@@ -64,10 +65,9 @@ for($i=0; $i<$x; $i++){
 <head>
     <link rel="stylesheet" href="all.css">
 </head>
-
-
-
-    <div id=divdroit><?php if($ind==$_SESSION["index"]){?><a href="compte.php"><img src="https://e7.pngegg.com/pngimages/313/130/png-clipart-colored-pencil-black-and-white-drawing-sharpener-s-angle-pencil.png" alt="" width=70px></a><?php }?>
+    <div id=divdroit>
+        <?php if($ind==$_SESSION["index"]){?><a href="compte.php"><img src="https://e7.pngegg.com/pngimages/313/130/png-clipart-colored-pencil-black-and-white-drawing-sharpener-s-angle-pencil.png" alt="" width=70px></a><?php }
+        else{?><a href="chat.php">Chat</a> <?php }?>
     <a href="page_accueil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
     <div class="divtab">
         <table width="90%" height="90%" align="center" margin-top="auto">

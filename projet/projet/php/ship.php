@@ -29,25 +29,21 @@ if((isset($_POST['ship'])) && (!empty($_POST['ship']))){
             <table width="75%" id="Mytab">
                 <tr>
                     <center>
-                        <th colspan="4"> Veuillez choisir un ship </th>
+                        <th colspan="4"> <big>Veuillez choisir un ship</big> </th>
                     </center>
                 </tr>
                 <tr>
                     <td>
-                        <center><img width=100px src="https://i.pinimg.com/736x/7e/ce/c4/7ecec434137d1fcbe023db38e06c1260.jpg" alt=""
-                                name="Eren" class="normal"></center>
+                        <center><img width=100px src="https://i.pinimg.com/736x/7e/ce/c4/7ecec434137d1fcbe023db38e06c1260.jpg" alt="" name="Eren" class="normal"></center>
                     </td>
                     <td>
-                        <center><img width=100px src="https://www.manga-news.com/public/images/pix/perso/3645/mikasa-ackerman-charcater-anime.jpg" alt=""
-                                name="Mikasa" class="normal"></center>
+                        <center><img width=100px src="https://www.manga-news.com/public/images/pix/perso/3645/mikasa-ackerman-charcater-anime.jpg" alt="" name="Mikasa" class="normal"></center>
                     </td>
                     <td>
-                        <center><img width=100px src="https://cdn.staticneo.com/w/attackontitan/SashaBlouse.jpg" alt=""
-                                name="Sasha" class="normal"></center>
+                        <center><img width=100px src="https://cdn.staticneo.com/w/attackontitan/SashaBlouse.jpg" alt="" name="Sasha" class="normal"></center>
                     </td>
                     <td>
-                        <center><img width=100px src="https://pm1.aminoapps.com/7099/6c02b10d239105399fe31a4360a937a62f0ef093r1-416-496v2_00.jpg" alt=""
-                                name="Erwin" class="normal"></center>
+                        <center><img width=100px src="https://pm1.aminoapps.com/7099/6c02b10d239105399fe31a4360a937a62f0ef093r1-416-496v2_00.jpg" alt="" name="Erwin" class="normal"></center>
                     </td>
                 </tr>
                 <tr>

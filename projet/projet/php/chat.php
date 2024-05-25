@@ -24,7 +24,7 @@ if (file_exists($file_path)) {
 }
 
 $email = $tab2[$_SESSION['index']]['email'];
-$other_email = $_SESSION['other_email']
+$other_email = $_SESSION['other_email'];
 
 ?>
 
