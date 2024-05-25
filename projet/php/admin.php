@@ -42,5 +42,5 @@ function ajoutadmin(){
     $time=time();
     //changer la formule sur le fichier
 }
-?>
+
 
