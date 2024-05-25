@@ -48,7 +48,16 @@ session_start();
                     window.location.href = "compte.php";
                 }
                 else{
-                    window.location.href = "chat.php";
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "set_other_email.php", true);
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            // Rediriger vers chat.php après avoir stocké l'email dans la session
+                            window.location.href = "chat.php";  
+                        }
+                    };
+                    xhr.send("email=" + email);
                 }
             }
         </script>

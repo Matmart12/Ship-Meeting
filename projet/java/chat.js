@@ -26,7 +26,7 @@ document.getElementById('chat-form').addEventListener('submit', function(event) 
         document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
 
         // Envoyer le message au serveur via AJAX
-        fetch('send_message.php', {
+        fetch('send_messages.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
