@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="connexion.css">
+    <title>Page de connexion</title>
+</head>
+
+<body>
+    <legend><h1>Formulaire de connexion</h1>
+        <table border="solid">  
+            <tr>
+                <td colspan="2">Email : <input type="email" name="email"></td>
+            </tr>
+            <tr>
+                <td colspan="2">Mot de passe : <input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td><button onclick="SignIn()">S'inscrire ?</button></td>
+                <td><button onclick="Verif()">Se connecter</button></td>
+            </tr>
+        </table>
+    </legend>
+    <script>
+        function SignIn(){
+            window.location.href = "inscription.html";
+        }
+        function Verif(){
+            window.location.href = "page_accueil.html";
+        }
+    </script>
+</body>
+</html>
