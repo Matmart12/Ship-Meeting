@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="../all.css">
 </head>
 
 </style>
@@ -15,9 +15,9 @@ if(file_exists($file_path)){
         exit();
     }
 }
-if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["time"]){
-    $tab[$_SESSION["index"]]["grade"]=="inscrit";
-    $tab[$_SESSION["index"]]["time"]==0;
+if($tab[$_SESSION("index")]["grade"]=="abonné" && $tab[$_SESSION("index")]["time"]){
+    $tab[$_SESSION("index")]["grade"]=="inscrit";
+    $tab[$_SESSION("index")]["time"]==0;
 }
 if($tab[$_SESSION["index"]]["grade"]!="admin" && $tab[$_SESSION["index"]]["grade"]!="abonné" && $tab[$_SESSION["index"]]["grade"]!="inscrit"){
     header("location:page_accueil.php");
@@ -25,6 +25,11 @@ if($tab[$_SESSION["index"]]["grade"]!="admin" && $tab[$_SESSION["index"]]["grade
 
 if(isset($_POST["index"])){
 $i=$_POST["index"];
+if( $tab[$_SESSION["index"]]["grade"]!="abonné" && $tab[$_SESSION["index"]]["grade"]!="inscrit"){
+    if($_SESSION["index"]!=$i){
+        header("location:page_accueil.php");
+    }
+}
 }
 else{
     $i=$_SESSION["index"];

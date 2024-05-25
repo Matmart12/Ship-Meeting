@@ -19,6 +19,7 @@ if(isset($_POST['email'])){
         }
     }
 } 
+
 if(isset($_POST['password'], $_POST['prenom'], $_POST['nom'], $_POST['age'], $_POST['pays'])){
     $password = $_POST['password'];
     if(isset($_POST['pseudo'])){
@@ -43,15 +44,11 @@ if(isset($_POST['password'], $_POST['prenom'], $_POST['nom'], $_POST['age'], $_P
         'genre' => $genre,
         'age' => $age,
         'pays' => $pays,
-        'ship' => 0,
-        'timer' => 0,
-        'grade' => 0,
     );
 
     if(isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
         $file = $_FILES['photo'];
-        $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
-        $photo_name = $email . '.' . $extension;
+        $photo_name = $email . '.png';
         move_uploaded_file($file['tmp_name'], "../icones/$photo_name");
         $data_array['photo'] = $photo_name;
     } 
@@ -80,7 +77,8 @@ if(isset($_POST['password'], $_POST['prenom'], $_POST['nom'], $_POST['age'], $_P
 </head>
 
 <body>
-    <form enctype="multipart/form-data" method="POST" action="inscription.php">    <div id=divdroit><a href="../page_connexion.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
+    <div id=divdroit><a href="../page_connexion.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
+    <form enctype="multipart/form-data" method="POST" action="inscription.php">
         <legend><h1>Formulaire d'inscription</h1>
             <p>Les champs marqués d'une étoiles sont obligatoires (la photo ne l'est pas)</p>
             <table>  
@@ -108,6 +106,9 @@ if(isset($_POST['password'], $_POST['prenom'], $_POST['nom'], $_POST['age'], $_P
                 </tr>
                 <tr>
                     <td colspan="2"><input placeholder="age*" type="number" min="18" max="110" name="age" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input placeholder="pays*" name="pays" required></td>
                 </tr>
                 <tr>
                     <td colspan="2"><input input id="id1" type="file" accept=".png" name="photo"></td>

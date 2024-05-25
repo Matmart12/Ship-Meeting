@@ -14,7 +14,7 @@ if(file_exists($file_path)){
         echo "erreur crittique";
     }
 }
-if($tab[$_SESSION["index"]]["grade"]!="admin"&&$tab[$_SESSION["index"]]["grade"]!="abonné"&&$tab[$_SESSION["index"]]["grade"]!="inscrit"){
+if($tab[$_SESSION["index"]]["grade"]!="abonné"&&$tab[$_SESSION["index"]]["grade"]!="inscrit"){
     header("location:page_accueil.php");
 }
 $i=$_SESSION["index"];

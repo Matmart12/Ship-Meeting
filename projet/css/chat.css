@@ -51,6 +51,10 @@ body {
     color: white;
 }
 
+.message.received{
+    justify-content: flex-start;
+}
+
 .chat-input {
     padding: 10px;
     display: flex;
