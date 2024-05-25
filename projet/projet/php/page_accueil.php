@@ -41,7 +41,7 @@ session_start();
 </body>
 <script>
     function Accueil(){
-        window.location.href = "../page_connexion.php";
+        window.location.href = "page_connexion.php";
     }
     function Ship_avatar(){
         window.location.href = "ship.php";

@@ -18,8 +18,8 @@ if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["tim
 <head>
 <link rel="stylesheet" href="all.css">
 </head>
-<div id=divdroit><a href="accueuil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
-<form action="" method=post>
+<div id=divdroit><a href="page_accueil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
+
 
 <div id="table">
 <center>
@@ -41,5 +41,6 @@ Qui-suis-je?
 function ajoutadmin(){
     document.location.href="ad_admin.php";
 }
-
+</script>
+</html>
 
