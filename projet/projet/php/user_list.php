@@ -32,22 +32,20 @@ if(isset($_SESSION["other_email"])){
                 exit();
             }
             foreach($tab as $compte){
-                if($compte["banni"]==0){
-                    echo "<tr onclick='redirect(\"$compte[email]\")'>";
-                    echo "<td class='border'>" . "<img class='img' src='../icones/" . $compte['photo'] . "'>" . "</td>";
-                    echo "<td class='text'>" . $compte['email'] . "</td>";
-                    echo "<td class='text'>" . $compte['password'] . "</td>";
-                    echo "<td class='text'>" . $compte['pseudo'] . "</td>";
-                    echo "<td class='text'>" . $compte['prenom'] . "</td>";
-                    echo "<td class='text'>" . $compte['nom'] . "</td>";
-                    echo "<td class='text'>" . $compte['genre'] . "</td>";
-                    echo "<td class='text'>" . $compte['age'] . " ans</td>";
-                    echo "<td class='text'>" . $compte['pays'] . "</td>";
-                    echo "<td class='text'>" . $compte['grade'] . "</td>";
-                    echo "<td class='text'>" . $compte['ship'] . "</td>";
-                    echo "<td> <button type='button' onclick='bannir()'>bannir</td>";
-                    echo "</tr>";
-                }
+                echo "<tr onclick='redirect(\"$compte[email]\")'>";
+                echo "<td class='border'>" . "<img class='img' src='../icones/" . $compte['photo'] . "'>" . "</td>";
+                echo "<td class='text'>" . $compte['email'] . "</td>";
+                echo "<td class='text'>" . $compte['password'] . "</td>";
+                echo "<td class='text'>" . $compte['pseudo'] . "</td>";
+                echo "<td class='text'>" . $compte['prenom'] . "</td>";
+                echo "<td class='text'>" . $compte['nom'] . "</td>";
+                echo "<td class='text'>" . $compte['genre'] . "</td>";
+                echo "<td class='text'>" . $compte['age'] . " ans</td>";
+                echo "<td class='text'>" . $compte['pays'] . "</td>";
+                echo "<td class='text'>" . $compte['grade'] . "</td>";
+                echo "<td class='text'>" . $compte['ship'] . "</td>";
+                echo "<button type='button' onclick='ban(\"$compte[email]\")'>Bannir";
+                echo "</tr>";
             }
             ?>
         </table>
@@ -63,12 +61,23 @@ if(isset($_SESSION["other_email"])){
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     xhr.onreadystatechange = function () {
                         if (xhr.readyState == 4 && xhr.status == 200) {
-                            // Rediriger vers profil.php après avoir stocké l'email dans la session
-                            window.location.href = "profil.php";  
+                            // Rediriger vers chat.php après avoir stocké l'email dans la session
+                            window.location.href = "chat.php";  
                         }
                     };
                     xhr.send("email=" + email);
                 }
+            }
+            function ban(email){
+                var xhr2 = new XMLHttpRequest();
+                xhr2.open("POST", "set_other_email.php", true);
+                xhr2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr2.onreadystatechange = function () {
+                    if (xhr2.readyState == 4 && xhr2.status == 200) {
+                        window.location.href = "user_list.php";  
+                    }
+                };
+                xhr2.send("email_ban=" + email);
             }
         </script>
     </body>

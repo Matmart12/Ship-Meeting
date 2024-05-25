@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(isset($_SESSION["other_email"])){
+    $_SESSION["other_email"]="";
+}
 ?>
 
 <!DOCTYPE html>
