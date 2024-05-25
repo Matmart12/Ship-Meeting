@@ -30,11 +30,11 @@ session_destroy();
 <script>
     function Connect()
     {
-        window.location.href = "php/connexion.php";
+        window.location.href = "connexion.php";
     }
     function SignIn()
     {
-        window.location.href = "php/inscription.php";
+        window.location.href = "inscription.php";
     }
 </script>
 

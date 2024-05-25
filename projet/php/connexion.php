@@ -58,7 +58,7 @@ if(isset($_POST['email'], $_POST['password'])){
     </form>
     <script>
         function Accueil(){
-            window.location.href = "../page_connexion.php";
+            window.location.href = "page_connexion.php";
         }
         function SignIn(){
             window.location.href = "inscription.php";

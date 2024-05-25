@@ -45,7 +45,7 @@ if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["tim
 </body>
 <script>
     function Accueil(){
-        window.location.href = "../page_connexion.php";
+        window.location.href = "page_connexion.php";
     }
     function Ship_avatar(){
         window.location.href = "ship.php";
