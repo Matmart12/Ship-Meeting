@@ -3,6 +3,7 @@ session_start();
 $file_path2 = "../data/info_formulaire.json";
 $file_path = "../data/send_messages.json";
 
+// Vérifiez si le fichier existe et chargez les données
 if (file_exists($file_path2)) {
     $json_data2 = file_get_contents($file_path2);
     $tab2 = json_decode($json_data2, true);
@@ -13,6 +14,7 @@ if (file_exists($file_path2)) {
     $tab2 = array();
 }
 
+// Vérifiez si le fichier existe et chargez les données
 if (file_exists($file_path)) {
     $json_data = file_get_contents($file_path);
     $tab = json_decode($json_data, true);
@@ -25,6 +27,7 @@ if (file_exists($file_path)) {
 
 $email = $tab2[$_SESSION['index']]['email'];
 $other_email = $_SESSION['other_email'];
+
 ?>
 
 <!DOCTYPE html>
@@ -32,25 +35,21 @@ $other_email = $_SESSION['other_email'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat</title>
     <link rel="stylesheet" href="../css/chat.css">
+    <title>Chat</title>
 </head>
 <body>
-    <div id="divdroit"><a href="page_accueil.php"><img id="home_icon" src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="Home"></a></div>
-    <div class="chat-container">
-        <div class="chat-header">
-            Chat Room
-        </div>
+    <div id=divdroit><a href="page_accueil.php"><img id="home_icon" src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
+    <div id="chat-container">
         <div class="chat-messages" id="chat-messages">
-            <!-- Les messages seront ajoutés ici dynamiquement -->
             <?php
-                foreach ($tab as &$entry) {
-                    if (($entry['email'] == $email && $entry['other_email'] == $other_email) || ($entry['email'] == $other_email && $entry['other_email'] == $email)) {
+                foreach ($tab as $entry) {
+                    if (($entry['email'] == $email && $entry['other_email'] == $other_email) ||
+                        ($entry['email'] == $other_email && $entry['other_email'] == $email)) {
                         foreach ($entry['messages'] as $message) {
                             if ($entry['email'] == $email) {
                                 echo "<div class='message sent'><div class='message-content'>$message</div></div>";
-                            } 
-                            else {
+                            } else {
                                 echo "<div class='message received'><div class='message-content'>$message</div></div>";
                             }
                         }
@@ -65,6 +64,6 @@ $other_email = $_SESSION['other_email'];
             </form>
         </div>
     </div>
-    <script src="../java/chat.js"></script>
+    <script src="../js/chat.js"></script>
 </body>
 </html>
