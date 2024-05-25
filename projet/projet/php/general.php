@@ -85,7 +85,7 @@ $ind=count($compte);
                 else{
                     var xhr = new XMLHttpRequest();
                     xhr.open("POST", "set_other_email.php", true);
-                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); // voir code chat.php de victor pour comprendre comment l'utiliser
                     xhr.onreadystatechange = function () {
                         if (xhr.readyState == 4 && xhr.status == 200) {
                             // Rediriger vers profil.php après avoir stocké l'email dans la session
