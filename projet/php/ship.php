@@ -9,22 +9,16 @@ if(file_exists($file_path)){
         exit();
     }
 }
-
-if($tab[$_SESSION("index")]["grade"]=="abonné" && $tab[$_SESSION("index")]["time"]){
-    $tab[$_SESSION("index")]["grade"]=="inscrit";
-    $tab[$_SESSION("index")]["time"]==0;
+else{
+    echo "Erreur Critique";
+    exit();
 }
-if($tab[$_SESSION["index"]]["grade"]!="admin" && $tab[$_SESSION["index"]]["grade"]!="abonné" && $tab[$_SESSION["index"]]["grade"]!="inscrit"){
-    header("location:page_accueil.php");
-}
-
 if((isset($_POST['ship'])) && (!empty($_POST['ship']))){
     $tab[$_SESSION['index']]['ship'] = $_POST['ship'];
     file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));
     header("Location: page_accueil.php");
     exit();
 }
-
 ?>
 
 <!DOCTYPE html>

@@ -30,12 +30,8 @@ session_start();
             }
             foreach($tab as $compte){
                 echo "<tr onclick='redirect(\"$compte[email]\")'>";
-                echo "<td class='border'>" . "<img class='img' src='../icones/" . $compte['photo'] . "'>" . "</td>";
-                echo "<td class='text'>" . $compte['email'] . "</td>";
-                echo "<td class='text'>" . $compte['password'] . "</td>";
+                echo "<td class='border'>" . "<img class='img' src='../icones/0.png'>" . "</td>";
                 echo "<td class='text'>" . $compte['pseudo'] . "</td>";
-                echo "<td class='text'>" . $compte['prenom'] . "</td>";
-                echo "<td class='text'>" . $compte['nom'] . "</td>";
                 echo "<td class='text'>" . $compte['genre'] . "</td>";
                 echo "<td class='text'>" . $compte['age'] . " ans</td>";
                 echo "<td class='text'>" . $compte['pays'] . "</td>";

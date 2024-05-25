@@ -38,7 +38,9 @@ Qui-suis-je?
 </form>
 <script type="text/javascript">
 function ajoutadmin(){
-document.location.href="ad_admin.php";
+    $_SESSION["formule"]="admin";
+    $time=time();
+    //changer la formule sur le fichier
 }
-
+?>
 

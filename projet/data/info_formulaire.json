@@ -2,57 +2,15 @@
     {
         "email": "gaviolivic@cy-tech.fr",
         "password": "1234",
+        "pseudo": "unknown",
         "prenom": "Victor",
-        "pseudo": "TaSoeurLaGrosseDaronne",
         "nom": "Gavioli",
-        "genre": "raciste",
+        "genre": "Homme",
         "age": "20",
         "pays": "France",
+        "grade": "inscrit",
+        "time": 0,
         "ship": 0,
-        "photo": "TheGreatReview@gmail.com.png"
-    },
-    {
-        "email": "MathisRaciste@gmail.com",
-        "password": "1234",
-        "prenom": "Mathis",
-        "nom": "Martinez",
-        "age": "90",
-        "pays": "France",
-        "ship": 0,
-        "photo": "MathisRaciste@gmail.com.png"
-    },
-    {
-        "email": "sarahboutin92@gmail.com",
-        "password": "&\u00e7\u00e8",
-        "prenom": "sarah",
-        "nom": "boutin",
-        "age": "50",
-        "pays": "France",
-        "ship": "xMouise",
-        "photo": "sarahboutin92@gmail.com.png"
-    },
-    {
-        "email": "gaviolivic@cy-tech.fre",
-        "password": "1234",
-        "prenom": "Victor",
-        "pseudo": "",
-        "nom": "Gavioli",
-        "genre": "raciste",
-        "age": "20",
-        "pays": "France",
-        "ship": "ErenxMikasa",
         "photo": "0.png"
-    },
-    {
-        "email": "mathis.m7878@gmail.com",
-        "password": "Merde",
-        "prenom": "Mathis",
-        "nom": "Martinez",
-        "age": "19",
-        "pays": "France",
-        "ship": "ErenxMikasa",
-        "photo": "mathis.m7878@gmail.com.png",
-        "grade": "abonn\u00e9",
-        "pseudo": "Matmart12"
     }
 ]

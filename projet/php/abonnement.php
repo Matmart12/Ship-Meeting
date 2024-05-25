@@ -1,16 +1,5 @@
 <?php
 session_start();
-if(file_exists($file_path)){
-    $json_data = file_get_contents($file_path);
-    $tab = json_decode($json_data, true);
-    if(empty($json_data) || !is_array($tab)){
-        echo "erreur crittique";
-    }
-}
-if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["time"]){
-    $tab[$_SESSION["index"]]["grade"]=="inscrit";
-    $tab[$_SESSION["index"]]["time"]==0;
-}
 ?>
 
 <!DOCTYPE html>

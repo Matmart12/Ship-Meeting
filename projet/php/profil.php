@@ -1,6 +1,5 @@
 
 
-</style>
 <?php
 session_start();
 $file_path = "../data/info_formulaire.json";
@@ -13,6 +12,7 @@ if(file_exists($file_path)){
     }
 }
 
+
 if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["time"]){
     $tab[$_SESSION["index"]]["grade"]=="inscrit";
     $tab[$_SESSION["index"]]["time"]==0;
@@ -24,6 +24,11 @@ if($tab[$_SESSION["index"]]["grade"]!="admin" && $tab[$_SESSION["index"]]["grade
 
 if(isset($_POST["index"])){
 $i=$_POST["index"];
+if( $tab[$_SESSION["index"]]["grade"]!="abonné" && $tab[$_SESSION["index"]]["grade"]!="inscrit"){
+    if($_SESSION["index"]!=$i){
+        header("Location: page_accueil.php");
+    }
+}
 }
 else{
     $i=$_SESSION["index"];

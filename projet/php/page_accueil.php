@@ -1,10 +1,5 @@
 <?php 
 session_start();
-
-if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["time"]){
-    $tab[$_SESSION["index"]]["grade"]=="inscrit";
-    $tab[$_SESSION["index"]]["time"]==0;
-}
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +13,7 @@ if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["tim
 </head>
 
 <body>
+    <button type="submit">Profil</button>
     <header><p id="titre">Ship Meeting</p></header>
     <table>
         <tr>
@@ -45,7 +41,7 @@ if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["tim
 </body>
 <script>
     function Accueil(){
-        window.location.href = "page_connexion.php";
+        window.location.href = "../page_connexion.php";
     }
     function Ship_avatar(){
         window.location.href = "ship.php";
