@@ -13,6 +13,7 @@ session_start();
 </head>
 
 <body>
+    <button type="submit">Profil</button>
     <header><p id="titre">Ship Meeting</p></header>
     <table>
         <tr>

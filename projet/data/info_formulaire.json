@@ -2,12 +2,15 @@
     {
         "email": "gaviolivic@cy-tech.fr",
         "password": "1234",
+        "pseudo": "unknown",
         "prenom": "Victor",
-        "pseudo": "eazfaezf",
         "nom": "Gavioli",
-        "genre": "Raciste",
+        "genre": "Homme",
         "age": "20",
         "pays": "France",
-        "photo": "gaviolivic@cy-tech.fr.png"
+        "grade": "inscrit",
+        "time": 0,
+        "ship": 0,
+        "photo": "0.png"
     }
 ]

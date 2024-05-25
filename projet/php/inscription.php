@@ -38,12 +38,15 @@ if(isset($_POST['password'], $_POST['prenom'], $_POST['nom'], $_POST['age'], $_P
     $data_array = array(
         'email' => $email,
         'password' => $password,
-        'prenom' => $prenom,
         'pseudo' => $pseudo,
+        'prenom' => $prenom,
         'nom' => $nom,
         'genre' => $genre,
         'age' => $age,
         'pays' => $pays,
+        'grade' => "inscrit",
+        'time' => 0,
+        'ship' => 0,
     );
 
     if(isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
