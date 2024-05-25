@@ -44,11 +44,13 @@ if(isset($_SESSION["other_email"])){
                 echo "<td class='text'>" . $compte['pays'] . "</td>";
                 echo "<td class='text'>" . $compte['grade'] . "</td>";
                 echo "<td class='text'>" . $compte['ship'] . "</td>";
-                echo "<td><button type='button' onclick='ban(\"$compte[email]\")'>Bannir</td>";
+                if($compte['banni']==0)echo "<td><button type='button' onclick='ban(\"$compte[email]\")'>Bannir</td>";
                 echo "</tr>";
             }
             ?>
         </table>
+    </body>
+</html>
         <script>
             function redirect(email){
                 var sessionEmail = "<?php echo $tab[$_SESSION['index']]['email']; ?>";
@@ -80,5 +82,3 @@ if(isset($_SESSION["other_email"])){
                 xhr2.send("email_ban=" + email);
             }
         </script>
-    </body>
-</html>
