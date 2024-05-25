@@ -44,8 +44,10 @@ if(isset($_POST['password'], $_POST['prenom'], $_POST['nom'], $_POST['age'], $_P
         'age' => $age,
         'pays' => $pays,
         'ship' => 0,
-        'timer' => 0,
-        'grade' => 0,
+        'time' => 0,
+        'grade' => "inscrit",
+        'description' =>$description,
+        'vues' => 0,
     );
 
     if(isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {

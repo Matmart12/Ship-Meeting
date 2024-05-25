@@ -22,8 +22,8 @@ if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["tim
 
 <div id="table">
 <center>
-        il semblerait que vous souhaitez devenir admin sur ce site. <br>
-        Veuillez donc trouver la solution du riddle suivant: <br>
+        Il semblerait que vous souhaitez devenir admin sur ce site. <br>
+        Veuillez trouver la solution du riddle suivant: <br>
     <br>
         -Je suis partout à la fois. <br>
         -Je suis présent depuis le big bang. <br>

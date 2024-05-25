@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<head>
-    <link rel="stylesheet" href="all.css">
-</head>
+
 
 </style>
 <?php
@@ -15,10 +12,12 @@ if(file_exists($file_path)){
         exit();
     }
 }
+
 if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["time"]){
     $tab[$_SESSION["index"]]["grade"]=="inscrit";
     $tab[$_SESSION["index"]]["time"]==0;
 }
+
 if($tab[$_SESSION["index"]]["grade"]!="admin" && $tab[$_SESSION["index"]]["grade"]!="abonné" && $tab[$_SESSION["index"]]["grade"]!="inscrit"){
     header("location:page_accueil.php");
 }
@@ -35,9 +34,9 @@ $Mail=$tab[$i]["email"];
 $Pseudo=$tab[$i]["pseudo"];
 $n=$tab[$i]["nom"];
 $p=$tab[$i]["prenom"];
-$D=$tab[$i]["Description"];
+$D=$tab[$i]["description"];
 $Age=$tab[$i]["age"];
-$S=$tab[$i]["sexe"];
+$S=$tab[$i]["genre"];
 $Mdp=$tab[$i]["password"];
 $vues=$tab[$i]["vues"];
 $A=$tab[$i]["pays"];
@@ -57,8 +56,13 @@ for($i=0; $i<$x; $i++){
     }
 }
 ?>
-
+<!DOCTYPE html>
 <html>
+<head>
+    <link rel="stylesheet" href="all.css">
+</head>
+
+
 
     <div id=divdroit><a href="compte.php"><img src="https://e7.pngegg.com/pngimages/313/130/png-clipart-colored-pencil-black-and-white-drawing-sharpener-s-angle-pencil.png" alt="" width=70px></a>
     <a href="page_accueil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
