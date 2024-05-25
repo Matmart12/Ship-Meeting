@@ -12,7 +12,13 @@ if (file_exists($file_path2)) {
 } else {
     $tab2 = array();
 }
-
+if($tab[$_SESSION("index")]["grade"]=="abonné" && $tab[$_SESSION("index")]["time"]){
+    $tab[$_SESSION("index")]["grade"]=="inscrit";
+    $tab[$_SESSION("index")]["time"]==0;
+}
+if($tab[$_SESSION["index"]]["grade"]!="admin" && $tab[$_SESSION["index"]]["grade"]!="abonné" && $tab[$_SESSION["index"]]["grade"]!="inscrit"){
+    header("location:page_accueil.php");
+}
 // Vérifiez si le fichier existe et chargez les données
 if (file_exists($file_path)) {
     $json_data = file_get_contents($file_path);

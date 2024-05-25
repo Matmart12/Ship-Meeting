@@ -1,5 +1,16 @@
 <?php
 session_start();
+
+
+
+
+if($tab[$_SESSION("index")]["grade"]=="abonné" && $tab[$_SESSION("index")]["time"]){
+    $tab[$_SESSION("index")]["grade"]=="inscrit";
+    $tab[$_SESSION("index")]["time"]==0;
+}
+if($tab[$_SESSION["index"]]["grade"]!="admin"&&$tab[$_SESSION["index"]]["grade"]!="abonné"&&$tab[$_SESSION["index"]]["grade"]!="inscrit"){
+    header("location:page_accueil.php");
+}
 ?>
 
 <!DOCTYPE html>
