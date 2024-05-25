@@ -44,7 +44,7 @@ if(isset($_SESSION["other_email"])){
                 echo "<td class='text'>" . $compte['pays'] . "</td>";
                 echo "<td class='text'>" . $compte['grade'] . "</td>";
                 echo "<td class='text'>" . $compte['ship'] . "</td>";
-                echo "<button type='button' onclick='ban(\"$compte[email]\")'>Bannir";
+                echo "<td><button type='button' onclick='ban(\"$compte[email]\")'>Bannir</td>";
                 echo "</tr>";
             }
             ?>
