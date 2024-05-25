@@ -1,0 +1,40 @@
+legend
+{
+    text-align: center;
+    margin-top:3%;
+}
+h1{
+    font-size:50px; 
+    font-weight:bold;
+}
+table{
+    margin:10% auto;
+    font-size:38px;
+}
+input
+{
+    padding-top:10px;
+    font-size:25px;
+    font-weight:bold;
+}
+button
+{
+    width:100%;
+    padding-top:2%;
+    padding-bottom:2%;
+    font-size:25px;
+    font-weight:bold;
+    border-radius:8px;
+}
+
+button:hover{
+    color:red;
+    cursor:pointer;
+}
+
+table
+{
+    border-radius:3px;
+    border-width:10px;
+    border-color:black;
+}
