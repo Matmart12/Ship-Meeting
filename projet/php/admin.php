@@ -1,5 +1,6 @@
 <?php
 session_start();
+$file_path = "../data/info_formulaire.json";
 if(file_exists($file_path)){
     $json_data = file_get_contents($file_path);
     $tab = json_decode($json_data, true);
@@ -38,9 +39,7 @@ Qui-suis-je?
 </form>
 <script type="text/javascript">
 function ajoutadmin(){
-    $_SESSION["formule"]="admin";
-    $time=time();
-    //changer la formule sur le fichier
+    document.location.href="ad_admin.php";
 }
 
 

@@ -47,8 +47,6 @@ if(isset($_POST['password'], $_POST['prenom'], $_POST['nom'], $_POST['age'], $_P
         'grade' => "inscrit",
         'time' => 0,
         'ship' => 0,
-        'time' => 0,
-        'grade' => "inscrit",
         'description' =>$description,
         'vues' => 0,
     );
