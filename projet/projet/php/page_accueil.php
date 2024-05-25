@@ -19,10 +19,10 @@ session_start();
         <tr>
             <td onclick="Accueil()">Accueil</td>
             <td onclick="Ship_avatar()">Ship-avatar</td>
-            <td onclick="Ship_chat()">Ship-chat</td>
+            <td onclick="Ship_chat()">Admin</td>
             <td onclick="Formules()">Formules d'abonnement</td>
             <td onclick="Compte()">Compte</td>
-            <td>Succès</td>
+            <td onclick="général()">Général</td>
         </tr>
     </table>
     <div id="accueil">
@@ -53,7 +53,10 @@ session_start();
         window.location.href = "formules.php";
     }
     function Compte(){
-        window.location.href = "profil.php"
+        window.location.href = "profil.php";
+    }
+    function général(){
+        document.location.href="general.php";
     }
 </script>
 

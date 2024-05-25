@@ -3,8 +3,9 @@
 
 <?php
 session_start();
-
-
+if(isset($_SESSION["other_email"])){
+    $_SESSION["other_email"]="";
+}
 $file_path = "../data/info_formulaire.json";
 if(file_exists($file_path)){
     $json_data = file_get_contents($file_path);
@@ -22,7 +23,7 @@ if($tab[$_SESSION["index"]]["grade"] !="admin" && $tab[$_SESSION["index"]]["grad
 }
 $c=count($tab);
 for($i=0; $i<$c; $i++){
-    if($tab[$i]["ship"]==$tab[$_SESSION["index"]]["ship"]){
+    if($tab[$i]["pseudo"]==$_POST["pseudo"]){
         $compte[]=$i;
     }
 }

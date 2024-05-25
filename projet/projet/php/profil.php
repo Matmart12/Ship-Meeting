@@ -20,13 +20,16 @@ if($tab[$_SESSION["index"]]["grade"]!="admin"&& $tab[$_SESSION["index"]]["grade"
 }
 
 else{
-    if(isset($_SESSION["other_email"])){
+   /* if(isset($_SESSION["other_email"])){
     for($i=0; $i<count($tab); $i++)
         if($_SESSION["other_email"]== $tab[$i]["email"])
     {
             $ind=$i;
         }
-    }
+    }*/
+    if(isset($_POST["index"])){
+            $ind=$_POST["index"];
+        }
     else{
         $ind=$_SESSION["index"];
     }
@@ -109,11 +112,15 @@ for($i=0; $i<$x; $i++){
         </table>
     </div>
         <div id="divdroit">
-        <?php $vues=$vues+1; 
-        echo "$vues"; 
-        $tab[$ind]["vues"]=$vues;
-        file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));
+        <?php 
+        if($tab[$_SESSION["index"]]["grade"]!="admin"&& $tab[$_SESSION["index"]]["grade"]!="abonné"&&$tab[$_SESSION["index"]]["grade"]!="inscrit"){
+            echo "$vues"; 
+            $tab[$ind]["vues"]=$vues;
+            file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));
+        }$vues=$vues+1; 
+      
         ?>
+        
         <img src="https://previews.123rf.com/images/yupiramos/yupiramos1702/yupiramos170203297/70844218-signe-humain-oeil-isol%C3%A9-ic%C3%B4ne-dessin-vectoriel.jpg" alt=""width="40px"> 
         </div>
 
