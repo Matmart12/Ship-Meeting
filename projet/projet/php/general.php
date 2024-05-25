@@ -17,30 +17,38 @@ if(file_exists($file_path)){
 if($_SESSION["index"]==null){
     header("Location: connexion.php");
 }
+
+if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["time"]<time()){
+    $tab[$_SESSION["index"]]["grade"]="inscrit";
+    $tab[$_SESSION["index"]]["time"]=0;
+    echo"alert('Veuillez vous rabonner')";
+    file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));
+}
+file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));
 if($tab[$_SESSION["index"]]["grade"] !="admin" && $tab[$_SESSION["index"]]["grade"] !="abonné" && $tab[$_SESSION["index"]]["grade"] !="inscrit"){
     header("location: page_accueil.php");
 }
 $c=count($tab);
 for($i=0; $i<$c; $i++){
-    if($tab[$i]["ship"]==$tab[$_SESSION["index"]]["ship"]){
-        $compte[]=$i;
+    if(($tab[$i]["ship"]!=null ||($tab[$i]["ship"]==null && $tab[$_SESSION["index"]]["ship"]==null))&& $i!= $_SESSION["index"]){
+        if($tab[$i]["ship"]==$tab[$_SESSION["index"]]["ship"] && $tab[$i]["banni"]==0){
+            $compte[]=$i;
+        }
     }
 }
-
 $ind=count($compte);
 ?>
-
 <html>
     <head>
         <link rel="stylesheet" href="all.css">
     </head>
     <body>
     
-    <div id=divdroit><a href="accueil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
+    <div id=divdroit><a href="page_accueil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
     <table id="table" border="solid">
         <center><form action="research.php" method="post">
                 <input type="text" name="pseudo" value="Veuillez entrer un pseudo" require/>
-                <button type="submit" value="send" > <img width="40px" src="https://static.vecteezy.com/ti/vecteur-libre/p3/4566919-style-dessin-doodle-loupe-icone-dessin-dessin-a-la-main-vectoriel.jpg" alt=""></button>
+                <button type="submit" value="send" > <img width="20px" src="https://static.vecteezy.com/ti/vecteur-libre/p3/4566919-style-dessin-doodle-loupe-icone-dessin-dessin-a-la-main-vectoriel.jpg" alt=""></button>
             </form>
         </center>
         <?php
@@ -57,7 +65,7 @@ $ind=count($compte);
                     echo"<td>";
                     ?>
                     <form action="profil.php" method="post">
-                    <input type="hidden" name="index" id="index" value="<?php $i?>"> 
+                    <input type="hidden" name="index" id="index" value="<?php $i?>">
                         <button >aller voir le profil</button>
                         </form>
                         <?php
@@ -82,7 +90,8 @@ $ind=count($compte);
                     xhr.onreadystatechange = function () {
                         if (xhr.readyState == 4 && xhr.status == 200) {
                             // Rediriger vers profil.php après avoir stocké l'email dans la session
-                            window.location.href = "profil.php";  
+                            alert(<?php echo $_SESSION["other_email"]?>);
+                           // window.location.href = "profil.php";  
                         }
                     };
                     xhr.send("email=" + email);

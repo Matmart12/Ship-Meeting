@@ -13,6 +13,12 @@ else{
     echo "Erreur Critique";
     exit();
 }
+if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["time"]<time()){
+    $tab[$_SESSION["index"]]["grade"]="inscrit";
+    $tab[$_SESSION["index"]]["time"]=0;
+    echo"alert('Veuillez vous rabonner')";
+}
+file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));
 
 $index = $_SESSION['index'];
 if(isset($_POST['email'], $_POST['password'], $_POST['prenom'], $_POST['nom'], $_POST['age'], $_POST['pays'])){
@@ -34,6 +40,7 @@ if(isset($_POST['email'], $_POST['password'], $_POST['prenom'], $_POST['nom'], $
     $tab[$index]['nom'] = $_POST['nom'];
     $tab[$index]['age'] = $_POST['age'];
     $tab[$index]['pays'] = $_POST['pays'];
+    $tab[$index]['description'] = $_POST['description'];
 
     $old_photo = $tab[$index]['photo'];
     $tab[$index]['email'] = $_POST['email'];
@@ -92,10 +99,12 @@ if(isset($_POST['email'], $_POST['password'], $_POST['prenom'], $_POST['nom'], $
             <tr>
                 <td><input id="text" placeholder="pays" name="pays" type="text" value="<?php echo $tab[$index]['pays'];?>" required></input></td>
             </tr>
-                <input id="file" name="photo" type="file" accept=".png"> 
             <tr>
+                <td><input id="text" placeholder="description" type="textarea" name="description" value="<?php echo $tab[$index]['description'];?>"></td>
+            </tr>
                 <td><button id="compte" type="submit">Valider les modifications</button></td>
             </tr>
+        <input id="file" name="photo" type="file" accept=".png"> 
         </table>
     </form>
 </body>

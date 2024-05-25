@@ -3,6 +3,17 @@ session_start();
 if(isset($_SESSION["other_email"])){
     $_SESSION["other_email"]="";
 }
+if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["time"]<time()){
+    $tab[$_SESSION["index"]]["grade"]="inscrit";
+    $tab[$_SESSION["index"]]["time"]=0;
+    echo"alert('Veuillez vous rabonner')";
+    file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));
+}
+
+if($tab[$_SESSION["index"]]["grade"]!="admin"){
+    header("location:page_accueil.php");
+}
+
 ?>
 
 <!DOCTYPE html>

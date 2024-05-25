@@ -10,12 +10,14 @@ if(file_exists($file_path)){
     }
 }
 
-if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["time"]){
-    $tab[$_SESSION["index"]]["grade"]=="inscrit";
-    $tab[$_SESSION["index"]]["time"]==0;
+if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["time"]<time()){
+    $tab[$_SESSION["index"]]["grade"]="inscrit";
+    $tab[$_SESSION["index"]]["time"]=0;
+    echo"alert('Veuillez vous rabonner')";
+    file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));
 }
 
-if($tab[$_SESSION["index"]]["grade"]!="admin"&& $tab[$_SESSION["index"]]["grade"]!="abonné"&&$tab[$_SESSION["index"]]["grade"]!="inscrit"){
+if($tab[$_SESSION["index"]]["grade"]!="admin" && $tab[$_SESSION["index"]]["grade"]!="abonné"&&$tab[$_SESSION["index"]]["grade"]!="inscrit"){
     header("location:page_accueil.php");
 }
 

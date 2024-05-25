@@ -17,7 +17,7 @@ if($tab[$_SESSION["index"]]["grade"]!="abonné"&&$tab[$_SESSION["index"]]["grade
 $i=$_SESSION["index"];
 $Ug="abonné";
 $tab[$i]["grade"]=$Ug;
-if($tab[$i]["time"]=0){
+if($tab[$i]["time"]==0){
     $tab[$i]["time"]=time()+300;
 }
 else{
