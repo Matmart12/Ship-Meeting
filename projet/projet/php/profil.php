@@ -1,5 +1,3 @@
-
-
 <?php
 session_start();
 $file_path = "../data/info_formulaire.json";
@@ -23,7 +21,7 @@ if($tab[$_SESSION["index"]]["grade"]!="admin" && $tab[$_SESSION["index"]]["grade
 }
 
 if(isset($_POST["index"])){
-$i=$_POST["index"];
+$ind=$_POST["index"];
 if( $tab[$_SESSION["index"]]["grade"]!="abonné" && $tab[$_SESSION["index"]]["grade"]!="inscrit"){
     if($_SESSION["index"]!=$i){
         header("Location: page_accueil.php");
@@ -31,21 +29,21 @@ if( $tab[$_SESSION["index"]]["grade"]!="abonné" && $tab[$_SESSION["index"]]["gr
 }
 }
 else{
-    $i=$_SESSION["index"];
+    $ind=$_SESSION["index"];
 }
 $Um=$tab[$_SESSION["index"]]["email"];
 $Ug=$tab[$_SESSION["index"]]["grade"];
-$Mail=$tab[$i]["email"];
-$Pseudo=$tab[$i]["pseudo"];
-$n=$tab[$i]["nom"];
-$p=$tab[$i]["prenom"];
-$D=$tab[$i]["description"];
-$Age=$tab[$i]["age"];
-$S=$tab[$i]["genre"];
-$Mdp=$tab[$i]["password"];
-$vues=$tab[$i]["vues"];
-$A=$tab[$i]["pays"];
-$sh=$tab[$i]["ship"];
+$Mail=$tab[$ind]["email"];
+$Pseudo=$tab[$ind]["pseudo"];
+$n=$tab[$ind]["nom"];
+$p=$tab[$ind]["prenom"];
+$D=$tab[$ind]["description"];
+$Age=$tab[$ind]["age"];
+$S=$tab[$ind]["genre"];
+$Mdp=$tab[$ind]["password"];
+$vues=$tab[$ind]["vues"];
+$A=$tab[$ind]["pays"];
+$sh=$tab[$ind]["ship"];
 $x=strlen($Mdp);
 for($i=0; $i<$x; $i++){
     if($i==0){
@@ -53,7 +51,7 @@ for($i=0; $i<$x; $i++){
     }
     else{
         if($i+1!=$x){
-            $MDP[$i]='*';
+            $MDP[$i]='*.';
         }
         else{
             $MDP[$i]=$Mdp[$i];
@@ -69,7 +67,7 @@ for($i=0; $i<$x; $i++){
 
 
 
-    <div id=divdroit><a href="compte.php"><img src="https://e7.pngegg.com/pngimages/313/130/png-clipart-colored-pencil-black-and-white-drawing-sharpener-s-angle-pencil.png" alt="" width=70px></a>
+    <div id=divdroit><?php if($ind==$_SESSION["index"]){?><a href="compte.php"><img src="https://e7.pngegg.com/pngimages/313/130/png-clipart-colored-pencil-black-and-white-drawing-sharpener-s-angle-pencil.png" alt="" width=70px></a><?php }?>
     <a href="page_accueil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
     <div class="divtab">
         <table width="90%" height="90%" align="center" margin-top="auto">
@@ -111,8 +109,11 @@ for($i=0; $i<$x; $i++){
         </table>
     </div>
         <div id="divdroit">
-        <?php $Vues+=1; 
-        echo "$Vues" ?>
+        <?php $vues=$vues+1; 
+        echo "$vues"; 
+        $tab[$ind]["vues"]=$vues;
+        file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));
+        ?>
         <img src="https://previews.123rf.com/images/yupiramos/yupiramos1702/yupiramos170203297/70844218-signe-humain-oeil-isol%C3%A9-ic%C3%B4ne-dessin-vectoriel.jpg" alt=""width="40px"> 
         </div>
 

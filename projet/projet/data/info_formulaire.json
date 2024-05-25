@@ -26,10 +26,13 @@
         "age": "19",
         "pays": "France",
         "grade": "admin",
-        "time": 0,
+        "time": 300,
         "ship": 0,
         "description": null,
-        "vues": 0,
+        "vues": 4,
         "photo": "0.png"
+    },
+    "2": {
+        "vues": 0
     }
 }

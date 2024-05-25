@@ -24,9 +24,9 @@ session_start();
 </html>
 
 <script type="text/javascript">
-    //function inscription(){
-        //document.location.href="inscription.php";
-    //}
+    function inscription(){
+        document.location.href="inscription.php";
+    }
     function abonné(){
         document.location.href="abonnement.php";
     }

@@ -53,7 +53,7 @@ session_start();
         window.location.href = "formules.php";
     }
     function Compte(){
-        window.location.href = "compte.php"
+        window.location.href = "profil.php"
     }
 </script>
 

@@ -1,11 +1,15 @@
 <?php
 session_start();
+$file_path = "../data/info_formulaire.json";
 if(file_exists($file_path)){
     $json_data = file_get_contents($file_path);
     $tab = json_decode($json_data, true);
     if(empty($json_data) || !is_array($tab)){
         echo "erreur crittique";
     }
+}
+else{
+    exit();
 }
 if($tab[$_SESSION["index"]]["grade"]!="admin"&&$tab[$_SESSION["index"]]["grade"]!="abonné"&&$tab[$_SESSION["index"]]["grade"]!="inscrit"){
     header("location:page_accueil.php");
