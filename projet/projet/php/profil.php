@@ -28,15 +28,15 @@ else{
     {
             $ind=$i;
         }
-    }*/
+    
     if(isset($_POST["index"])){
             $ind=$_POST["index"];
         }
-    else{
+    else{}*/
         $ind=$_SESSION["index"];
     }
     $ind=$_SESSION["index"];
-}
+//}
 $Um=$tab[$_SESSION["index"]]["email"];
 $Ug=$tab[$_SESSION["index"]]["grade"];
 $Mail=$tab[$ind]["email"];
