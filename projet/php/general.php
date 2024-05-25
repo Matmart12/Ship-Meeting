@@ -2,8 +2,8 @@
 <html>
 <?php
 session_start();
-if($_SESSION("index")==null){
-    header("location:php/accueuil.php");
+if($_SESSION["index"]==null){
+    header("location:accueuil.php");
 }
 if($tab[$_SESSION["index"]]["grade"]!="admin"&&$tab[$_SESSION["index"]]["grade"]!="abonné"&&$tab[$_SESSION["index"]]["grade"]!="inscrit"){
     header("location:page_accueil.php");
@@ -21,6 +21,10 @@ if(file_exists($file_path)){
         echo "Erreur critique";
         exit();
     }
+}
+if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["time"]){
+    $tab[$_SESSION["index"]]["grade"]=="inscrit";
+    $tab[$_SESSION["index"]]["time"]==0;
 }
 $c=count($tab);
 for($i=0; $i<$c; $i++){

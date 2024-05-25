@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+
+if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["time"]){
+    $tab[$_SESSION["index"]]["grade"]=="inscrit";
+    $tab[$_SESSION["index"]]["time"]==0;
+}
 ?>
 
 <!DOCTYPE html>

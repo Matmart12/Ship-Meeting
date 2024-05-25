@@ -7,9 +7,9 @@ if(file_exists($file_path)){
         echo "erreur crittique";
     }
 }
-if($tab[$_SESSION("index")]["grade"]=="abonné" && $tab[$_SESSION("index")]["time"]){
-    $tab[$_SESSION("index")]["grade"]=="inscrit";
-    $tab[$_SESSION("index")]["time"]==0;
+if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["time"]){
+    $tab[$_SESSION["index"]]["grade"]=="inscrit";
+    $tab[$_SESSION["index"]]["time"]==0;
 }
 ?>
 
