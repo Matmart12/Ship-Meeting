@@ -11,15 +11,21 @@ if(file_exists($file_path)){
 else{
     exit();
 }
-if($tab[$_SESSION["index"]]["grade"]!="admin"&&$tab[$_SESSION["index"]]["grade"]!="abonné"&&$tab[$_SESSION["index"]]["grade"]!="inscrit"){
+if($tab[$_SESSION["index"]]["grade"]!="abonné"&&$tab[$_SESSION["index"]]["grade"]!="inscrit"){
     header("location:page_accueil.php");
 }
 $i=$_SESSION["index"];
 $Ug="abonné";
 $tab[$i]["grade"]=$Ug;
+if($tab[$i]["time"]=0){
+    $tab[$i]["time"]=time()+300;
+}
+else{
 $tab[$i]["time"]+=300;
+}
 file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));
 header("location:page_accueil.php");
+exit()
 ?>
 <!DOCTYPE html>
 <html>

@@ -13,9 +13,6 @@
         "ship": 0,
         "photo": "0.png"
     },
-    "": {
-        "grade": "admin"
-    },
     "1": {
         "email": "mathis.m7878@gmail.com",
         "password": "Merde",
@@ -29,10 +26,7 @@
         "time": 300,
         "ship": 0,
         "description": null,
-        "vues": 4,
+        "vues": 8,
         "photo": "0.png"
-    },
-    "2": {
-        "vues": 0
     }
 }
