@@ -16,11 +16,5 @@ else{
 
 $index = $_SESSION["index"];
 $tab[$index]["grade"]="abonné";
-if($tab[$index]["time"]==0){
-    $tab[$index]["time"]=time()+300;
-}
-else{
-    $tab[$index]["time"]+=300;
-}
 file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));
 header("location:page_accueil.php");

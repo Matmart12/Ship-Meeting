@@ -28,6 +28,7 @@ session_start();
                 echo "Erreur Critique";
                 exit();
             }
+
             $seul = 1;
 
             foreach($tab as $key => $compte){

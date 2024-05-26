@@ -7,6 +7,7 @@ if(file_exists($file_path)){
     $tab = json_decode($json_data, true);
     if(empty($json_data) || !is_array($tab)){
         echo "Vous n'avez pas créer un compte sur Ship-Meeting";
+        exit();
     }
 }
 if(isset($_POST['email'], $_POST['password'])){
@@ -26,11 +27,9 @@ if(isset($_POST['email'], $_POST['password'])){
             }
         }
     }
-
     echo "Votre email ou mot de passe est incorrect ou vous n'avez pas créer de compte chez Ship-Meeting. Veuillez réessayer de vous connecter ou inscrivez vous.";
 }
 
-file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));
 ?>
 
 <!DOCTYPE html>

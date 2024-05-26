@@ -11,13 +11,13 @@ if(file_exists($file_path)){
     $json_data = file_get_contents($file_path);
     $tab = json_decode($json_data, true);
     if(empty($json_data) || !is_array($tab)){
-        echo "Erreur critique";
+        echo "erreur critique";
         exit();
     }
 }
 
 else{
-    echo "Erreur Critique";
+    echo "erreur critique";
     exit();
 }
 
