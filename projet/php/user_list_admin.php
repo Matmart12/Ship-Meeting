@@ -46,7 +46,7 @@ session_start();
                     echo "<td class='text'>" . $compte['pays'] . "</td>";
                     echo "<td class='text'>" . $compte['grade'] . "</td>";
                     echo "<td class='text'>" . $compte['ship'] . "</td>";
-                    echo "<td><button type='button' onclick='ban(\"$compte[email]\")'>Bannir</td>";
+                    echo "<button type='button' onclick='ban(\"$compte[email]\")'>Bannir";
                     echo "</tr>";
                 }
             }
@@ -104,7 +104,7 @@ session_start();
             
             function ban(email){
                 var xhr2 = new XMLHttpRequest();
-                xhr2.open("POST", "set_other_email.php", true);
+                xhr2.open("POST", "set_other_index.php", true);
                 xhr2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr2.onreadystatechange = function () {
                     if (xhr2.readyState == 4 && xhr2.status == 200) {
