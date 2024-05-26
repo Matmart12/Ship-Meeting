@@ -8,7 +8,7 @@ Vous y mettrez vos informations et serez redirigé sur la page de connexion.
 -Sur la page ship-avatar, vous pourrez choisir 2 personnages qui pour vous irraient bien ensemble, ceci permettra de vous recommender d'autres personnes ayant le même ship sur la page ship-chat.  
 -La page ship-chat permet de voir si on est inscrit ou abonné les personnes ayant le même ship que le sien mais aussi de faire une recherche avec le pseudo d'un utilisateur.  
 En clickant sur leur ligne, vous serez ammené sur leur profil.  
-En tant qu'administrateur, (ta partie Victor).
+En tant qu'administrateur, vous pouvez bannir des utilisateurs ainsi qu'accéder à une liste de tous les utilisateurs avec toutes leurs informations entrés sur Ship Meeting.  
 -Sur les formules d'abonnements, vous pourrez acceder à la formule abonnée ou à la formule admin.  
 La formule abonné dure 5 mins pour l'instant donc faîtes bien attention.  
 La formule admin quand à elle est à vie mais vous devrez répondre correctement au riddle pour l'avoir (absolument pas mais si ovus êtes curieux, la réponse est "le Temps").  
