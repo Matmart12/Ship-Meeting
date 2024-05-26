@@ -119,5 +119,5 @@ if((isset($_SESSION['other_index'])) && ($index == $_SESSION['other_index'])){
         ?>       
         <img src="https://previews.123rf.com/images/yupiramos/yupiramos1702/yupiramos170203297/70844218-signe-humain-oeil-isol%C3%A9-ic%C3%B4ne-dessin-vectoriel.jpg" alt=""width="40px">
         </div>
-            <?php }?>
+            <?php}?>
 </html>
