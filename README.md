@@ -1,6 +1,6 @@
   Bienvenue sur le site de rencontre "Ship Meeting"
   
-Pour pouvoir commencer votre visite, veuillez vous connecter à "http://localhost:(le nombre que vous avez choisi pour le localhost)/php/page_accueil.php"!
+Pour pouvoir commencer votre visite, veuillez vous connecter à "http://localhost:(le nombre que vous avez choisi pour le localhost)/php/page_accueil.php"!  
 A partir de là vous pouvez voir les différentes pages et à quoi ils servent mais ne pouvez pas y accéder sauf pour une.  
 -La page auquelle vous pouvez accéder se trouve être la page d'inscription.  
 Vous y mettrez vos informations et serez redirigé sur la page de connexion.  
