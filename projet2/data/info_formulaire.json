@@ -1,0 +1,36 @@
+[
+    {
+        "email": "gaviolivic@cy-tech.fr",
+        "password": "1234",
+        "pseudo": "Gaspard est ronchon",
+        "prenom": "Victor",
+        "nom": "Gavioli",
+        "genre": "Autre",
+        "age": "20",
+        "pays": "France",
+        "grade": "inscrit",
+        "time": 0,
+        "ship": "RobinxTatsumaki",
+        "description": "ezafeazfaezf",
+        "vues": 0,
+        "banni": 1,
+        "photo": "gaviolivic@cy-tech.fr.png"
+    },
+    {
+        "email": "jeaneude@ntm",
+        "password": "1234",
+        "pseudo": "TaSoeurLaGrosseDaronne",
+        "prenom": "Victor",
+        "nom": "G",
+        "genre": "Femme",
+        "age": "20",
+        "pays": "France",
+        "grade": "admin",
+        "time": 0,
+        "ship": "RobinxTatsumaki",
+        "description": "",
+        "vues": 0,
+        "banni": 1,
+        "photo": "0.png"
+    }
+]

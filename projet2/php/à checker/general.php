@@ -1,0 +1,101 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['index'])){
+    header('Location: page_connexion.php');
+    exit();
+}
+
+$file_path = "../data/info_formulaire.json";
+if(file_exists($file_path)){
+    $json_data = file_get_contents($file_path);
+    $tab = json_decode($json_data, true);
+    if(empty($json_data) || !is_array($tab)){
+        echo "Erreur critique";
+        exit();
+    }
+}
+if($_SESSION["index"]==null){
+    header("Location: connexion.php");
+}
+
+if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["time"]<time()){
+    $tab[$_SESSION["index"]]["grade"]="inscrit";
+    $tab[$_SESSION["index"]]["time"]=0;
+    file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));
+}
+
+if($tab[$_SESSION["index"]]["grade"] !="admin" && $tab[$_SESSION["index"]]["grade"] !="abonné" && $tab[$_SESSION["index"]]["grade"] !="inscrit"){
+    header("location: page_accueil.php");
+}
+$c=count($tab);
+for($i=0; $i<$c; $i++){
+    if(($tab[$i]["ship"]!=null ||($tab[$i]["ship"]==null && $tab[$_SESSION["index"]]["ship"]==null))&& $i!= $_SESSION["index"]){
+        if($tab[$i]["ship"]==$tab[$_SESSION["index"]]["ship"] && $tab[$i]["banni"]==0){
+            $compte[]=$i;
+        }
+    }
+}
+$ind=count($compte);
+?>
+<html>
+    <head>
+        <link rel="stylesheet" href="all.css">
+    </head>
+    <body>
+    
+    <div id=divdroit><a href="page_accueil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
+    <table id="table" border="solid">
+        <center><form action="research.php" method="post">
+                <input type="text" name="pseudo" value="Veuillez entrer un pseudo" require/>
+                <button type="submit" value="send" > <img width="20px" src="https://static.vecteezy.com/ti/vecteur-libre/p3/4566919-style-dessin-doodle-loupe-icone-dessin-dessin-a-la-main-vectoriel.jpg" alt=""></button>
+            </form>
+        </center>
+        <?php
+        if($ind==0){
+            echo "<tr> <tdclass='text'> vous n'avez pas de recommendations </td> </tr>";
+        }
+        else{
+    for($i=0; $i<$ind; $i++){
+                    echo "<tr onclick='redirect(\"" . $tab[$compte[$i]]["email"] . "\")'>";
+                    echo "<td class='border'>" . "<img class='img' src='../icones/" . $tab[$compte[$i]]['photo'] . "' width=50px>" . "</td>";
+                    echo "<td class='text'>" . $tab[$compte[$i]]['email'] . "</td>";
+                    echo "<td class='text'>" . $tab[$compte[$i]]['password'] . "</td>";
+                    echo "<td class='text'>" . $tab[$compte[$i]]['pseudo'] . "</td>";
+                    echo"<td>";
+                    ?>
+                    <form action="profil.php" method="post">
+                    <input type="hidden" name="index" id="index" value="<?php $i?>">
+                        <button >aller voir le profil</button>
+                        </form>
+                        <?php
+                        echo"</td>";
+                    echo "</tr>";
+                }
+            }
+                ?>
+    </table>
+    </center>
+    </body>
+    <script>
+            function redirect(email){
+                var sessionEmail = "<?php echo $tab[$_SESSION['index']]['email']; ?>";
+                if(sessionEmail == email){
+                    window.location.href = "profil.php";
+                }
+                else{
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "set_other_email.php", true);
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); // voir code chat.php de victor pour comprendre comment l'utiliser
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            // Rediriger vers profil.php après avoir stocké l'email dans la session
+                            alert(<?php echo $_SESSION["other_email"]?>);
+                           // window.location.href = "profil.php";  
+                        }
+                    };
+                    xhr.send("email=" + email);
+                }
+            }
+        </script>
+</html>
