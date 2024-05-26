@@ -12,7 +12,7 @@
         "time": 0,
         "ship": "GenosxSaitama",
         "description": "",
-        "vues": 3,
+        "vues": 4,
         "banni": 0,
         "photo": "victorgavioli@jaiunmail.com.png"
     },
@@ -29,7 +29,7 @@
         "time": 0,
         "ship": 0,
         "description": "",
-        "vues": 3,
+        "vues": 6,
         "banni": 0,
         "photo": "MathisEz@jaiunmail.com.png"
     },
@@ -83,5 +83,22 @@
         "vues": 3,
         "banni": 0,
         "photo": "ManuelGarcia@jaiunmail.com.png"
+    },
+    {
+        "email": "mathis.m@gmail.com",
+        "password": "Merde",
+        "pseudo": "Matmart12",
+        "prenom": "Mathis",
+        "nom": "Martinez",
+        "genre": "Homme",
+        "age": "19",
+        "pays": "France",
+        "grade": "admin",
+        "time": 0,
+        "ship": 0,
+        "description": "",
+        "vues": 0,
+        "banni": 0,
+        "photo": "0.png"
     }
 ]
