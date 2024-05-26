@@ -44,7 +44,7 @@ if(isset($_POST['email'], $_POST['password'])){
 
 <body>
     <form method="POST" action="../php/connexion.php"><div id=divdroit><a href="page_connexion.php"><img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
-        <legend><h1 id="titre">Formulaire de connexion</h1>
+        <legend><h1>Formulaire de connexion</h1>
             <table>  
                 <tr>
                     <td colspan="2"><input placeholder="email" name="email" required></td>
