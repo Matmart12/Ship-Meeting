@@ -28,7 +28,9 @@ session_start();
                 echo "Erreur Critique";
                 exit();
             }
-
+            if($tab[$_SESSION["index"]]["grade"]!="admin"){
+                header("location: page_accueil.php");
+            }
             $seul = 1;
 
             foreach($tab as $key => $compte){

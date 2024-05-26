@@ -12,7 +12,10 @@ if (file_exists($file_path)) {
 } else {
     $tab = array();
 }
-
+if($tab[$_SESSION["index"]]["grade"]="abonné"&&$tab[$_SESSION["index"]]["time"]<time()){
+    $tab[$_SESSION["index"]]["grade"]="inscrit";
+    $tab[$_SESSION["index"]]["time"]=0;
+}
 if (file_exists($file_path2)) {
     $json_data2 = file_get_contents($file_path2);
     $tab2 = json_decode($json_data2, true);

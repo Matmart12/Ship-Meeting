@@ -13,6 +13,10 @@ else{
     echo "Erreur Critique";
     exit();
 }
+if($tab[$_SESSION["index"]]["grade"]="abonné"&&$tab[$_SESSION["index"]]["time"]<time()){
+    $tab[$_SESSION["index"]]["grade"]="inscrit";
+    $tab[$_SESSION["index"]]["time"]=0;
+}
 
 $index = $_SESSION['index'];
 if(isset($_POST['email'], $_POST['password'], $_POST['prenom'], $_POST['nom'], $_POST['age'], $_POST['pays'])){

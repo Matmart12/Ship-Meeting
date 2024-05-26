@@ -29,7 +29,13 @@ session_start();
                 echo "Erreur Critique";
                 exit();
             }
-
+            if($tab[$_SESSION["index"]]["grade"]="abonné"&&$tab[$_SESSION["index"]]["time"]<time()){
+                $tab[$_SESSION["index"]]["grade"]="inscrit";
+                $tab[$_SESSION["index"]]["time"]=0;
+            }
+            if($tab[$_SESSION["index"]]["grade"]!="abonné"){
+                header("location: page_accueil.php");
+            }
             $ship = $tab[$_SESSION['index']]['ship'];
             $seul = 1;
 

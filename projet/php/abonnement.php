@@ -13,6 +13,10 @@ else{
     echo "erreur critique";
     exit();
 }
+if($tab[$_SESSION["index"]]["grade"]="abonné"&&$tab[$_SESSION["index"]]["time"]<time()){
+    $tab[$_SESSION["index"]]["grade"]="inscrit";
+    $tab[$_SESSION["index"]]["time"]=0;
+}
 ?>
 
 <!DOCTYPE html>
