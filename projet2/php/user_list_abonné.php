@@ -29,16 +29,18 @@ session_start();
                 exit();
             }
             foreach($tab as $compte){
-                echo "<tr onclick='redirect(\"$compte[email]\")'>";
-                echo "<td class='border'>" . "<img class='img' src='../icones/" . $compte['photo'] . "'>" . "</td>";
-                echo "<td class='text'>" . $compte['pseudo'] . "</td>";
-                echo "<td class='text'>" . $compte['genre'] . "</td>";
-                echo "<td class='text'>" . $compte['age'] . " ans</td>";
-                echo "<td class='text'>" . $compte['pays'] . "</td>";
-                echo "<td class='text'>" . $compte['grade'] . "</td>";
-                echo "<td class='text'>" . $compte['time'] . "</td>";
-                echo "<td class='text'>" . $compte['ship'] . "</td>";
-                echo "</tr>";
+                if($compte['ship'] == $ship && $compte['banni']==0){
+                    echo "<tr onclick='redirect(\"$compte[email]\")'>";
+                    echo "<td class='border'>" . "<img class='img' src='../icones/" . $compte['photo'] . "'>" . "</td>";
+                    echo "<td class='text'>" . $compte['pseudo'] . "</td>";
+                    echo "<td class='text'>" . $compte['genre'] . "</td>";
+                    echo "<td class='text'>" . $compte['age'] . " ans</td>";
+                    echo "<td class='text'>" . $compte['pays'] . "</td>";
+                    echo "<td class='text'>" . $compte['grade'] . "</td>";
+                    echo "<td class='text'>" . $compte['time'] . "</td>";
+                    echo "<td class='text'>" . $compte['ship'] . "</td>";
+                    echo "</tr>";
+                }
             }
             ?>
         </table>
