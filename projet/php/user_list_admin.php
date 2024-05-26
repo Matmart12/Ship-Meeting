@@ -46,7 +46,7 @@ session_start();
                     echo "<td class='text'>" . $compte['pays'] . "</td>";
                     echo "<td class='text'>" . $compte['grade'] . "</td>";
                     echo "<td class='text'>" . $compte['ship'] . "</td>";
-                    echo "<button type='button' onclick='ban(\"$compte[email]\")'>Bannir";
+                    echo "<button type='button' onclick='ban(\"$compte[email]\")'>Bannir " . $compte['email'];
                     echo "</tr>";
                 }
             }
@@ -77,7 +77,7 @@ session_start();
                         echo "<td class='text'>" . $compte['pays'] . "</td>";
                         echo "<td class='text'>" . $compte['grade'] . "</td>";
                         echo "<td class='text'>" . $compte['ship'] . "</td>";
-                        echo "<td><button type='button' onclick='ban(\"$compte[email]\")'>Bannir</td>";
+                        echo "<button type='button' onclick='ban(\"$compte[email]\")'>Bannir " . $compte['email'];
                         echo "</tr>";
                     }
                 }
