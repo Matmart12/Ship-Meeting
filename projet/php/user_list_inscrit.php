@@ -29,9 +29,7 @@ session_start();
                 echo "Erreur Critique";
                 exit();
             }
-            if($tab[$_SESSION["index"]]["grade"]!="inscrit"){
-                header("location: page_accueil.php");
-            }
+
             $ship = $tab[$_SESSION['index']]['ship'];
             $seul = 1;
             foreach($tab as $key => $compte){
