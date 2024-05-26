@@ -73,7 +73,8 @@ if((isset($_SESSION['other_index'])) && ($index == $_SESSION['other_index'])){
                 <td rowspan="6" id="fond">
                     <vertical-align>
                         <center>
-                            <img src="../icones/<?echo $photo;?>" alt="" class="profil"> <br>
+                            <img src="../icones/<?php echo $photo;?>" alt="" class="profil"> <br>
+
                             <h2><FONT color="white"><?php echo  "pseudo: $pseudo"?></FONT></h2>
                         </center>
                     </vertical-align>

@@ -1,5 +1,5 @@
-{
-    "0": {
+[
+    {
         "email": "gaviolivic@cy-tech.fr",
         "password": "1234",
         "pseudo": "Gaspard est ronchon",
@@ -16,7 +16,7 @@
         "banni": 1,
         "photo": "gaviolivic@cy-tech.fr.png"
     },
-    "1": {
+    {
         "email": "jeaneude@ntm",
         "password": "1234",
         "pseudo": "TaSoeurLaGrosseDaronne",
@@ -33,7 +33,7 @@
         "banni": 1,
         "photo": "0.png"
     },
-    "2": {
+    {
         "email": "mathis.m7878@gmail.com",
         "password": "Merde",
         "pseudo": "Matmart12",
@@ -42,15 +42,12 @@
         "genre": "Homme",
         "age": "19",
         "pays": "France",
-        "grade": "inscrit",
-        "time": 0,
-        "ship": 0,
+        "grade": "admin",
+        "time": 1716736563,
+        "ship": "LuffyxTatsumaki",
         "description": "",
         "vues": 10,
         "banni": 0,
-        "photo": "0.png"
-    },
-    "": {
-        "vues": 6
+        "photo": "mathis.m7878@gmail.com.png"
     }
-}
+]
