@@ -31,10 +31,11 @@ if(isset($_SESSION['other_index']))
         </p>
         <p>
             <h4>Présentation des différents onglets :</h4>
-            1. <b>Ship-avatar</b> : Pour modifier votre avatar Ship Meeting. Vous ne pouvez le faire qu'une fois par mois sauf si vous avez un abonnement payant. Il est obligatoire pour aller sur le Ship Chat.<br>
-            2. <b>Ship-chat</b> : Dès que vous avez fait votre Ship Avatar, le Ship Chat vous met en relation avec une personne qui a le même Ship Avatar. Vous pourrez alors entamer une conversation avec cette personne.<br>
-            3. <b>Formule d'abonnement</b> : Allez sur cette onglet pour voir les différentes offres d'abonnements et leurs avantages.<br>
-            4. <b>Profil</b> : Pour accéder aux informations de votre Ship Compte et les modifier.<br>
+            1. <b>Accueil</b> : Pour vous connecter ou vous inscrire à Ship Meeting.<br>
+            2. <b>Ship-avatar</b> : Pour modifier votre avatar Ship Meeting. Vous ne pouvez le faire qu'une fois par mois sauf si vous avez un abonnement payant. Il est obligatoire pour aller sur le Ship Chat.<br>
+            3. <b>Ship-chat</b> : Dès que vous avez fait votre Ship Avatar, le Ship Chat vous met en relation avec une personne qui a le même Ship Avatar. Vous pourrez alors entamer une conversation avec cette personne.<br>
+            4. <b>Formule d'abonnement</b> : Allez sur cette onglet pour voir les différentes offres d'abonnements et leurs avantages.<br>
+            5. <b>Profil</b> : Pour accéder aux informations de votre Ship Compte et les modifier.<br>
         </p>
     </div>
 </body>
