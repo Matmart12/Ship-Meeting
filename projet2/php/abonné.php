@@ -15,7 +15,7 @@ else{
 }
 
 $index = $_SESSION["index"];
-$tab[$index]["grade"]="abonné";
+$tab[$index]["grade"]="abonne";
 if($tab[$index]["time"]==0){
     $tab[$index]["time"]=time()+300;
 }

@@ -106,12 +106,11 @@ if((isset($_SESSION['other_index'])) && ($index == $_SESSION['other_index'])){
         <div id="divdroit">
         <?php 
         if($tab[$_SESSION["index"]]["grade"]!="admin"&& $tab[$_SESSION["index"]]["grade"]!="abonné" && $tab[$_SESSION["index"]]["grade"]!="inscrit"){
-            echo "$vues"; 
-            $tab[$ind]["vues"]=$vues;
-            file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));
         $vues=$vues+1;     
+        $tab[$index]["vues"]=$vues;
+        file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));}
         ?>       
-        <img src="https://previews.123rf.com/images/yupiramos/yupiramos1702/yupiramos170203297/70844218-signe-humain-oeil-isol%C3%A9-ic%C3%B4ne-dessin-vectoriel.jpg" alt=""width="40px"> <?php } ?>
+         <?php if($tab[$_SESSION["index"]]["grade"]=="admin" || $tab[$_SESSION["index"]]["grade"]=="abonne"){ echo"$vues"?><img src="https://previews.123rf.com/images/yupiramos/yupiramos1702/yupiramos170203297/70844218-signe-humain-oeil-isol%C3%A9-ic%C3%B4ne-dessin-vectoriel.jpg" alt=""width="40px"><?php }?> 
         </div>
 
 </html>
