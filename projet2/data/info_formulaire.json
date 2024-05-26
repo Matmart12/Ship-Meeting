@@ -32,5 +32,22 @@
         "vues": 0,
         "banni": 1,
         "photo": "0.png"
+    },
+    {
+        "email": "mathis.m7878@gmail.com",
+        "password": "Merde",
+        "pseudo": "Matmart12",
+        "prenom": "Mathis",
+        "nom": "Martinez",
+        "genre": "Homme",
+        "age": "19",
+        "pays": "France",
+        "grade": "inscrit",
+        "time": 0,
+        "ship": 0,
+        "description": "",
+        "vues": 0,
+        "banni": 0,
+        "photo": "0.png"
     }
 ]

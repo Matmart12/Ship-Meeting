@@ -18,12 +18,15 @@ else{
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="all.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/abonnement.css">
+    <title>Abonnement</title>
     </head>
     <body>
         <div id=divdroit><a href="page_accueil.php"> <img src="https://www.educol.net/coloriage-maison-dl28263.jpg" width="40px" alt="" ></a></div>
         <div id="table">
         <center> 
+        <header><p id="titre">abonnement</p></header>
             <table>
                 <tr height=20px>
                     il semblerait que vous souhaitez devenir abonné sur ce site. <br>

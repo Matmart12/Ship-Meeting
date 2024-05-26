@@ -15,7 +15,12 @@ table{
 #divdroit{
   text-align:left;
 }
-
+#fond{
+  background-image: url("../images/arrière_plan.avif");
+  background-repeat: no-repeat;
+  
+  background-position: center;
+}
 #table{
   margin: 0;
 position: absolute;
