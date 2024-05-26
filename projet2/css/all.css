@@ -11,7 +11,9 @@ height: 200px;
 table{
   border: none;
 }
-
+h1{
+  color:lightcoral;
+}
 #divdroit{
   text-align:right;
 }
