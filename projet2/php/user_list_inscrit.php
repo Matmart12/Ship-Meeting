@@ -35,7 +35,7 @@ ini_set('display_errors', 0);
             $ship = $tab[$_SESSION['index']]['ship'];
 
             foreach($tab as $compte){
-                if($compte['ship'] == $ship){
+                if($compte['ship'] == $ship && $compte['banni']==0){
                     echo "<tr onclick='redirect(\"$compte[email]\")'>";
                     echo "<td class='border'>" . "<img class='img' src='../icones/0.png'>" . "</td>";
                     echo "<td class='text'>" . $compte['pseudo'] . "</td>";
