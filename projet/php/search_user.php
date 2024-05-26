@@ -17,9 +17,10 @@ else{
     echo "Erreur Critique";
     exit();
 }
-if($tab[$_SESSION["index"]]["grade"]="abonné"&&$tab[$_SESSION["index"]]["time"]<time()){
+if($tab[$_SESSION["index"]]["grade"]=="abonné" && $tab[$_SESSION["index"]]["time"]<time()){
     $tab[$_SESSION["index"]]["grade"]="inscrit";
     $tab[$_SESSION["index"]]["time"]=0;
+    file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));
 }
 $ship = $tab[$_SESSION['index']]['ship'];
 $tab2 = [];
