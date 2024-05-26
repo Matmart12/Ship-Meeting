@@ -15,6 +15,7 @@ if (file_exists($file_path)) {
 if($tab[$_SESSION["index"]]["grade"]="abonné"&&$tab[$_SESSION["index"]]["time"]<time()){
     $tab[$_SESSION["index"]]["grade"]="inscrit";
     $tab[$_SESSION["index"]]["time"]=0;
+    file_put_contents($file_path, json_encode($tab,JSON_PRETTY_PRINT));
 }
 if (file_exists($file_path2)) {
     $json_data2 = file_get_contents($file_path2);
