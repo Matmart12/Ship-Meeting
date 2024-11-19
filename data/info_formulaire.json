@@ -83,5 +83,22 @@
         "vues": 3,
         "banni": 0,
         "photo": "ManuelGarcia@jaiunmail.com.png"
+    },
+    {
+        "email": "Tony.Gavioli@jaiunmail.com",
+        "password": "1234",
+        "pseudo": "Fulgrim",
+        "prenom": "tony",
+        "nom": "gavioli",
+        "genre": "Homme",
+        "age": "20",
+        "pays": "France",
+        "grade": "abonn\u00e9",
+        "time": 0,
+        "ship": 0,
+        "description": "",
+        "vues": 0,
+        "banni": 0,
+        "photo": "0.png"
     }
 ]
